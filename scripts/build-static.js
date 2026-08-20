@@ -5,6 +5,7 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const includeNames = [
   "index.html",
+  "google4b67264bce2106ed.html",
   "src",
   "guides",
   "cars",
