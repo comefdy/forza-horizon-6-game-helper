@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+local-site.out.log
+local-site.err.log
+blanket_mockups/
+nolita-logo-embroidery.png
+submission-screenshots/

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/serve-static.js",
+    "build": "node scripts/generate-pages.js && node scripts/build-static.js",
+    "preview": "node scripts/serve-static.js dist"
+  },
+  "devDependencies": {}
+}
