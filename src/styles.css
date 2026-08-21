@@ -336,6 +336,12 @@ p {
   gap: 0.8rem;
 }
 
+.quick-access {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
 .guide-list a {
   display: grid;
   gap: 0.25rem;
@@ -346,8 +352,29 @@ p {
   text-decoration: none;
 }
 
+.quick-access a {
+  display: grid;
+  gap: 0.35rem;
+  min-height: 132px;
+  padding: 1rem;
+  border: 1px solid rgba(34, 211, 238, 0.26);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.09), rgba(255, 255, 255, 0.04));
+  text-decoration: none;
+}
+
 .guide-list span {
   color: var(--muted);
+}
+
+.quick-access span {
+  color: var(--muted);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .final-cta {
@@ -498,7 +525,9 @@ p {
 
   .card-grid.four,
   .card-grid.three,
-  .guide-list {
+  .guide-list,
+  .quick-access,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 

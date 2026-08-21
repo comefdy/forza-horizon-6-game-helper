@@ -7,6 +7,7 @@ const nav = [
   ["/guides/", "Guides"],
   ["/cars/", "Cars"],
   ["/car-list/", "Car List"],
+  ["/pc-settings/", "PC Settings"],
   ["/festival-playlist/", "Playlist"],
   ["/map/", "Map"],
   ["/roblox-forza-horizon-6/", "Roblox"]
@@ -31,30 +32,43 @@ const footer = `
 const pages = [
   {
     slug: "guides",
-    title: "Forza Horizon 6 Guides — Cars, Map, Tuning & Playlist",
-    description: "Explore Forza Horizon 6 guide pages for cars, car list, Japan map, starter tips, tuning, Festival Playlist rewards, Roblox version and PC settings.",
-    keywords: "Forza Horizon 6 guides, FH6 wiki, cars, map, tuning, Festival Playlist",
+    title: "Forza Horizon 6 Guides — PC, Cars & Starter Help",
+    description: "Explore Forza Horizon 6 guides by category, including PC settings, beginner tips, best starter cars, car list, map, editions, achievements and playlist rewards.",
+    keywords: "Forza Horizon 6 guides, FH6 wiki, PC settings, beginner guide, cars",
     h1: "Forza Horizon 6 Guides",
     eyebrow: "Guide Directory",
-    intro: "Use this page as the navigation hub for every Forza Horizon 6 guide. Start with the highest-demand topics: cars, Japan map, Festival Playlist, tuning, beginner help, and the separate Roblox experience.",
+    intro: "Use this page as the navigation hub for every Forza Horizon 6 guide. The structure follows player intent first: start, optimize PC performance, choose cars, track rewards, and verify official platform details.",
     sections: [
       {
-        id: "priority",
-        title: "First Pages to Build",
-        body: "These pages match the strongest search intent and create the internal-link base for the rest of the site.",
+        id: "quick-access",
+        title: "Quick Access",
+        body: "Start with the pages that answer urgent player questions: what to do first, how to run the game better, which cars to use, and where official facts come from.",
         cards: [
-          ["Cars", "Vehicle hub for categories, unlock routes, reward cars and JDM content.", "/cars/"],
-          ["Car List", "Table-style page for make, car name, class, country, collection and add-ons.", "/car-list/"],
-          ["Festival Playlist", "Weekly rewards, seasonal challenges, photo tasks and limited-time cars.", "/festival-playlist/"],
-          ["Best Cars", "Use-based picks for road, dirt, drift, drag, PR stunts and beginners.", "/best-cars/"],
-          ["Japan Map", "Tokyo, touge, rural roads, docks, industrial districts and exploration.", "/map/"],
-          ["Roblox FH6", "Separate page for the Roblox same-name experience and platform-specific searches.", "/roblox-forza-horizon-6/"]
+          ["Beginner Guide", "No-spoilers first steps, credits, wristbands, early cars and common mistakes.", "/beginner-guide/"],
+          ["PC Settings", "Optimized settings, 8GB GPU advice, upscaling, RTGI and troubleshooting.", "/pc-settings/"],
+          ["Car List", "Table-first vehicle source fields for make, class, country and unlock route.", "/car-list/"],
+          ["Best Starter Cars", "Early car choices by event type, handling, upgrade cost and progression.", "/best-starter-cars/"],
+          ["Festival Playlist", "Weekly rewards, challenge types, reward cars and update cadence.", "/festival-playlist/"],
+          ["Editions", "Standard, Deluxe, Premium, Game Pass, Steam and Xbox purchase facts.", "/editions/"]
+        ]
+      },
+      {
+        id: "categories",
+        title: "Guide Categories",
+        body: "This directory is organized like a lightweight wiki hub: each category links to practical pages instead of only repeating the game's description.",
+        cards: [
+          ["Cars", "Cars, car list, best cars, starter cars, JDM, reward cars and Car Pass topics.", "/cars/"],
+          ["Settings", "PC settings, wheel settings, controller setup, handheld advice and known issues.", "/pc-settings/"],
+          ["Map", "Japan map, Tokyo, touge routes, photo locations, collectibles and fast travel.", "/map/"],
+          ["Events", "Festival Playlist, Series updates, weekly reset, rewards and challenge guides.", "/festival-playlist/"],
+          ["Progression", "Beginner guide, money, wristbands, Festival Points, achievements and unlocks.", "/beginner-guide/"],
+          ["Official Info", "Release, platforms, editions, achievements, Steam, Xbox and official links.", "/editions/"]
         ]
       },
       {
         id: "seo",
         title: "SEO Structure",
-        body: "Each inner page uses one clear H1, compact intro copy, quick facts, a comparison table, FAQ, sources, and related guide links. This keeps pages useful for readers and easy to inspect with SEO tools."
+        body: "Each inner page uses one clear H1, compact intro copy, quick facts, a comparison table, FAQ, source links, and related guides. The goal is to combine official facts with player-problem pages that Fandom-style wikis often do not answer directly."
       }
     ]
   },
@@ -246,6 +260,123 @@ const pages = [
     ],
     sources: ["https://www.xbox.com/en-US/games/forza-horizon-6", "https://forza.net/fh6cars", "https://forums.forza.net/top"],
     links: ["/best-cars/", "/cars/", "/map/", "/beginner-guide/"]
+  },
+  {
+    slug: "pc-settings",
+    title: "Forza Horizon 6 PC Settings — Best FPS, 8GB GPU & Fixes",
+    description: "Use the best Forza Horizon 6 PC settings for FPS, 8GB GPUs, DLSS, FSR, XeSS, RTGI, reflections, ghosting, low GPU usage and crash troubleshooting.",
+    keywords: "Forza Horizon 6 PC settings, best settings, 8GB GPU, DLSS, low FPS",
+    h1: "Forza Horizon 6 PC Settings",
+    eyebrow: "Optimization Guide",
+    intro: "This PC settings guide turns player testing, Reddit troubleshooting, IGN-style setup structure and official PC notes into practical settings. Start with the balanced preset, then adjust RTGI, reflections, textures and upscaling for your hardware.",
+    facts: ["Quick Answer", "8GB GPU preset", "RTGI vs Screen Space GI", "DLSS / FSR / XeSS", "Ghosting and crash FAQ"],
+    table: {
+      headers: ["Setting", "Balanced Recommendation", "Why It Matters"],
+      rows: [
+        ["Environment Texture Quality", "High for 8GB GPUs", "Avoids VRAM pressure while keeping the Japan map sharp."],
+        ["Environment Geometry Quality", "High or Ultra", "Ultra can be heavier, so High is safer for mid-range PCs."],
+        ["Screen Space GI Quality", "Medium or High", "Big lighting impact without the full ray tracing cost."],
+        ["Raytraced GI Quality", "Off or Medium", "Use Medium only when FPS and VRAM headroom are stable."],
+        ["Screen Space Reflections", "High or Extreme", "Best fallback when raytraced reflections are off."],
+        ["Raytraced Reflections", "Off", "Turn this off first when chasing stable FPS."],
+        ["Particle Effects Quality", "Low", "Helps busy rain, snow and particle-heavy scenes."],
+        ["Upscaling", "DLSS / FSR / XeSS Quality", "Use quality modes first; test ghosting on the same route before changing presets."]
+      ]
+    },
+    sections: [
+      { id: "quick-answer", title: "Quick Answer", body: "For most players, start with High textures, High geometry, Screen Space GI Medium or High, Screen Space Reflections High, RTGI Off or Medium, RT Reflections Off, Shader High and Volumetric Fog High. Keep Audio and Motion Blur Quality high unless you are troubleshooting." },
+      { id: "hardware-presets", title: "Hardware Presets", body: "High-end PCs can experiment with RTGI Medium and higher reflections. Mid-range PCs should prioritize Screen Space GI and reflections. 8GB GPUs should avoid Extreme texture settings and turn off ray tracing first. Handheld-style devices should target stability before visual extras." },
+      { id: "troubleshooting", title: "Troubleshooting Priorities", body: "If DLSS is missing, check GPU support, driver version and Windows graphics settings. If the car shows ghosting, compare DLSS Quality, DLSS 4.5 presets, TAA, FSR and XeSS on the same route. If the game crashes, check overlays such as RTSS/RivaTuner, C++ Redistributable, GPU driver and whether the game is installed on an SSD." }
+    ],
+    faqs: [
+      ["What is the biggest FPS win?", "Turn off raytraced reflections and avoid high RTGI before lowering car detail or audio quality."],
+      ["What should 8GB GPU players use?", "Use High texture quality, High geometry, Screen Space GI Medium or High, Screen Space Reflections High and ray tracing off."],
+      ["Why do cars look ghosted?", "Upscaling and anti-aliasing can create motion artifacts. Compare DLSS presets, TAA, FSR and XeSS rather than judging only average FPS."],
+      ["Is an SSD required?", "Steam system requirements and player reports both point toward SSD installation as the safe recommendation."]
+    ],
+    sources: ["https://forza.net/news/forza-horizon-6-pc-experience", "https://forza.net/news/forza-horizon-6-thank-you", "https://store.steampowered.com/app/2483190/Forza_Horizon_6/", "https://www.ign.com/articles/forza-horizon-6-pc-settings-guide", "https://www.reddit.com/r/OptimizedGaming/comments/1ti3owm/forza_horizon_6_optimization_guide_an_in_depth/"],
+    links: ["/beginner-guide/", "/tuning/", "/best-cars/", "/guides/"]
+  },
+  {
+    slug: "best-starter-cars",
+    title: "Forza Horizon 6 Best Starter Cars — Early Builds",
+    description: "Choose the best Forza Horizon 6 starter cars for the first two hours, including safe road, dirt, off-road and drift picks plus early credits and upgrade advice.",
+    keywords: "Forza Horizon 6 best starter cars, first car, beginner cars, early builds",
+    h1: "Forza Horizon 6 Best Starter Cars",
+    eyebrow: "Beginner Cars",
+    intro: "The best starter car is not always the fastest car. New players need forgiving handling, cheap upgrades, useful event coverage and a car that stays relevant after the first few wristband unlocks.",
+    facts: ["First two hours", "Road and dirt coverage", "Cheap upgrades", "No-spoilers advice", "Credits priority"],
+    table: {
+      headers: ["Need", "Starter Car Logic", "Upgrade Priority"],
+      rows: [
+        ["Road racing", "Stable grip car with predictable braking", "Tires, brakes and weight before raw horsepower."],
+        ["Street racing", "Good launch and forgiving handling", "AWD or traction-friendly setup for beginners."],
+        ["Dirt", "Rally or off-road capable car", "Suspension, tires and controllability."],
+        ["Drift", "RWD car with room to learn angle", "Use a dedicated drift tune instead of a road tune."],
+        ["Exploration", "Flexible car that handles mixed roads", "Balanced build and reliability over top speed."]
+      ]
+    },
+    faqs: [
+      ["Can a wrong first car ruin progression?", "No. The first choice matters less than learning events, using sensible upgrades and collecting later rewards."],
+      ["Should beginners spend all credits on one car?", "No. Keep credits for upgrades and a small set of cars that cover different event types."],
+      ["Should new players use tune codes?", "Tune codes help early, but players should still learn why a tune is for road, dirt or drift."]
+    ],
+    sources: ["https://forza.net/news/forza-horizon-6-first-drive", "https://forza.net/fh6cars", "https://www.reddit.com/r/ForzaHorizon6/comments/1tgp8ln/fh6_a_beginners_guide_no_spoilers/"],
+    links: ["/beginner-guide/", "/cars/", "/car-list/", "/tuning/"]
+  },
+  {
+    slug: "editions",
+    title: "Forza Horizon 6 Editions — Steam, Xbox & Game Pass",
+    description: "Compare Forza Horizon 6 editions, Steam and Xbox purchase options, Game Pass access, Car Pass, add-ons, platforms, stores and official links.",
+    keywords: "Forza Horizon 6 editions, Game Pass, Steam, Xbox Store, Premium",
+    h1: "Forza Horizon 6 Editions",
+    eyebrow: "Official Info",
+    intro: "Use this page to keep official purchase and platform facts separate from gameplay opinions. Xbox and Steam pages should be the primary sources for editions, add-ons, Game Pass, language support and PC requirements.",
+    facts: ["Xbox Store", "Steam", "Game Pass", "Standard / Deluxe / Premium", "Add-ons and Car Pass"],
+    table: {
+      headers: ["Topic", "Use On Page", "Primary Source"],
+      rows: [
+        ["Standard Edition", "Base purchase option and launch access", "Xbox Store / Steam"],
+        ["Deluxe Edition", "Edition comparison and included add-ons", "Xbox Store"],
+        ["Premium Edition", "Premium add-ons, early access where applicable and Car Pass", "Xbox Store / Steam"],
+        ["Game Pass", "Subscription access and platform CTA", "Xbox official page"],
+        ["Steam", "PC features, reviews, languages and achievements", "Steam store page"]
+      ]
+    },
+    faqs: [
+      ["Where should players buy the game?", "Link to official Xbox Store and Steam pages rather than third-party sellers."],
+      ["Does edition information change?", "Yes. Treat pricing, discounts and bundle names as time-sensitive and verify on official stores."],
+      ["Should this page include review opinions?", "Keep this page factual. Put performance and gameplay advice on PC settings and beginner pages."]
+    ],
+    sources: ["https://www.xbox.com/en-US/games/store/forza-horizon-6/9NR1R1XWLCNB", "https://www.xbox.com/en-US/games/forza-horizon-6", "https://store.steampowered.com/app/2483190/Forza_Horizon_6/"],
+    links: ["/pc-settings/", "/achievements/", "/festival-playlist/", "/guides/"]
+  },
+  {
+    slug: "achievements",
+    title: "Forza Horizon 6 Achievements — Steam & Xbox Guide Plan",
+    description: "Track Forza Horizon 6 achievements on Steam and Xbox by campaign, collection, multiplayer, playlist and exploration categories with source-backed guide notes.",
+    keywords: "Forza Horizon 6 achievements, Steam achievements, Xbox achievements",
+    h1: "Forza Horizon 6 Achievements",
+    eyebrow: "Completion Guide",
+    intro: "Achievements are a strong long-tail topic because players search for hidden unlocks, category lists and completion routes. Start with Steam and Xbox facts, then split guide content by progression, collection, events and multiplayer.",
+    facts: ["57 Steam Achievements", "Xbox achievements", "Completion routes", "Hidden unlocks", "Playlist links"],
+    table: {
+      headers: ["Category", "What To Track", "Related Guide"],
+      rows: [
+        ["Campaign", "Progression and wristband milestones", "/beginner-guide/"],
+        ["Collection", "Car collection and reward vehicles", "/cars/"],
+        ["Playlist", "Series and seasonal reward objectives", "/festival-playlist/"],
+        ["Exploration", "Map, landmarks, photo and Treasure Cars", "/map/"],
+        ["Multiplayer", "Co-op, car meets, racing and online objectives", "/guides/"]
+      ]
+    },
+    faqs: [
+      ["How many Steam achievements are listed?", "The Steam store page lists 57 Steam Achievements."],
+      ["Should hidden achievements be spoiled?", "Use spoiler warnings and split no-spoilers hints from exact unlock requirements."],
+      ["How should this page link internally?", "Achievements should link into cars, map, playlist and beginner progression pages."]
+    ],
+    sources: ["https://store.steampowered.com/app/2483190/Forza_Horizon_6/", "https://www.xbox.com/en-US/games/forza-horizon-6", "https://forza.net/fh6playlists"],
+    links: ["/beginner-guide/", "/cars/", "/map/", "/festival-playlist/"]
   },
   {
     slug: "roblox-forza-horizon-6",
