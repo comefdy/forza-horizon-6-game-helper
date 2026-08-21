@@ -583,6 +583,8 @@ function render(page) {
 </html>`;
 }
 
+const siteUrl = "https://forza-horizon-6-game-helper.vercel.app";
+
 for (const page of pages) {
   const dir = path.join(root, page.slug);
   fs.mkdirSync(dir, { recursive: true });
@@ -591,12 +593,12 @@ for (const page of pages) {
 
 fs.writeFileSync(path.join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url>
-${pages.map((page) => `  <url><loc>/${page.slug}/</loc></url>`).join("\n")}
+  <url><loc>${siteUrl}/</loc></url>
+${pages.map((page) => `  <url><loc>${siteUrl}/${page.slug}/</loc></url>`).join("\n")}
 </urlset>
 `);
 
 fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Sitemap: ${siteUrl}/sitemap.xml
 `);
