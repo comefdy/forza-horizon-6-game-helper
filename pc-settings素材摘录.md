@@ -11,6 +11,8 @@
 - 官方 PC 体验：https://forza.net/news/forza-horizon-6-pc-experience
 - 官方感谢/问题说明：https://forza.net/news/forza-horizon-6-thank-you
 - Steam 页面：https://store.steampowered.com/app/2483190/Forza_Horizon_6/
+- IGN PC Settings Guide：https://www.ign.com/articles/forza-horizon-6-pc-settings-guide
+- Yahoo 同步 IGN PC Guide：https://tech.yahoo.com/gaming/articles/forza-horizon-6-pc-settings-120000889.html
 
 ## 可做页面标题
 
@@ -31,6 +33,14 @@
 - 旧硬盘能不能玩，是否必须 SSD。
 
 ## 可写成原创内容的设置建议
+
+### IGN 结构参考
+
+- 文章入口应先给 Quick Answer，直接告诉普通玩家先改哪几项，而不是先铺长背景。
+- 页面应按硬件分档：High-End PC、Mid-Range PC、8GB GPU、Handheld/Steam Deck 类设备。
+- 每个图形设置需要解释“影响什么”和“什么时候降档”，尤其是 RTGI、Screen Space GI、Reflections、Texture Quality、Upscaling。
+- 不要正面复制 IGN 的推荐表；用官方 PC 说明、Steam 系统需求、YouTube 转录和 Reddit 评论重新组织原创表格。
+- FAQ 要覆盖玩家真实问题：低 FPS、DLSS/FSR/XeSS 怎么选、车辆 ghosting、8GB 显存、掌机画质、驱动和崩溃。
 
 ### 画质优先方案
 
@@ -133,4 +143,4 @@
 3. Settings Not Worth Lowering First：Car Reflections、Audio、Deformable Terrain、Motion Blur Quality。
 4. 8GB GPU Settings：专门表格。
 5. Troubleshooting FAQ：DLSS 缺失、ghosting、crash、low GPU usage、SSD required。
-6. Sources：YouTube 转录、Reddit 讨论、官方 PC 体验、Steam。
+6. Sources：YouTube 转录、Reddit 讨论、IGN/Yahoo 媒体参考、官方 PC 体验、Steam。
