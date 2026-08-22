@@ -493,6 +493,123 @@ p {
   color: var(--muted);
 }
 
+.tool-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tool-heading p {
+  max-width: 760px;
+}
+
+.tool-pill {
+  flex: 0 0 auto;
+  padding: 0.38rem 0.62rem;
+  border: 1px solid rgba(34, 211, 238, 0.34);
+  border-radius: 999px;
+  color: var(--cyan);
+  background: rgba(34, 211, 238, 0.08);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.tool-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.tool-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.tool-form select {
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: #10121a;
+  padding: 0.6rem;
+  font: inherit;
+}
+
+.preset-output {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(244, 37, 133, 0.35);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(244, 37, 133, 0.16), rgba(34, 211, 238, 0.08));
+}
+
+.preset-output h3,
+.preset-output p {
+  margin: 0;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.setting-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.setting-chip span {
+  color: var(--muted);
+}
+
+.setting-chip strong {
+  text-align: right;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.checklist-grid label {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+}
+
+.checklist-grid input {
+  margin-top: 0.28rem;
+}
+
 @media (max-width: 840px) {
   .nav-toggle {
     display: inline-flex;
@@ -528,8 +645,16 @@ p {
   .card-grid.three,
   .guide-list,
   .quick-access,
-  .faq-grid {
+  .faq-grid,
+  .tool-form,
+  .settings-grid,
+  .checklist-grid {
     grid-template-columns: 1fr;
+  }
+
+  .tool-heading,
+  .preset-output {
+    display: grid;
   }
 
   .toc {

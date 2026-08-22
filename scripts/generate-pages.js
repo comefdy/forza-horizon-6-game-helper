@@ -288,6 +288,7 @@ const pages = [
       { id: "hardware-presets", title: "Hardware Presets", body: "High-end PCs can experiment with RTGI Medium and higher reflections. Mid-range PCs should prioritize Screen Space GI and reflections. 8GB GPUs should avoid Extreme texture settings and turn off ray tracing first. Handheld-style devices should target stability before visual extras." },
       { id: "troubleshooting", title: "Troubleshooting Priorities", body: "If DLSS is missing, check GPU support, driver version and Windows graphics settings. If the car shows ghosting, compare DLSS Quality, DLSS 4.5 presets, TAA, FSR and XeSS on the same route. If the game crashes, check overlays such as RTSS/RivaTuner, C++ Redistributable, GPU driver and whether the game is installed on an SSD." }
     ],
+    tools: true,
     faqs: [
       ["What is the biggest FPS win?", "Turn off raytraced reflections and avoid high RTGI before lowering car detail or audio quality."],
       ["What should 8GB GPU players use?", "Use High texture quality, High geometry, Screen Space GI Medium or High, Screen Space Reflections High and ray tracing off."],
@@ -509,6 +510,73 @@ function linksBlock(links) {
   </div>`;
 }
 
+function pcToolsBlock(page) {
+  if (!page.tools) return "";
+  return `<div class="tool-stack" id="tools">
+    <div class="content-panel settings-tool" data-settings-tool>
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">Interactive Tool</p>
+          <h2>PC Settings Recommender</h2>
+          <p>Choose your PC target and get a practical preset for Forza Horizon 6. The tool favors stable FPS first, then protects visual details that matter most while driving.</p>
+        </div>
+        <span class="tool-pill">No login required</span>
+      </div>
+      <form class="tool-form">
+        <label>GPU VRAM
+          <select name="vram">
+            <option value="8">8GB or less</option>
+            <option value="12">10-12GB</option>
+            <option value="16">16GB+</option>
+          </select>
+        </label>
+        <label>Resolution
+          <select name="resolution">
+            <option value="1080">1080p</option>
+            <option value="1440">1440p</option>
+            <option value="4k">4K</option>
+          </select>
+        </label>
+        <label>Goal
+          <select name="goal">
+            <option value="balanced">Balanced</option>
+            <option value="fps">High FPS</option>
+            <option value="quality">Visual Quality</option>
+          </select>
+        </label>
+        <label>Ray Tracing
+          <select name="rt">
+            <option value="off">Prefer Off</option>
+            <option value="medium">Allow Medium</option>
+          </select>
+        </label>
+      </form>
+      <div class="preset-output" aria-live="polite">
+        <div>
+          <p class="panel-label">Recommended Preset</p>
+          <h3 data-preset-title>Balanced 8GB Preset</h3>
+          <p data-preset-note>Stable settings for most mid-range PCs.</p>
+        </div>
+        <button class="button subtle" type="button" data-copy-preset>Copy Preset</button>
+      </div>
+      <div class="settings-grid" data-settings-output></div>
+    </div>
+
+    <div class="content-panel">
+      <p class="eyebrow">Troubleshooting Tool</p>
+      <h2>Quick Fix Checklist</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> DLSS/FSR/XeSS option checked on the same route</label>
+        <label><input type="checkbox" /> GPU driver updated, especially Nvidia Game Ready Driver</label>
+        <label><input type="checkbox" /> Raytraced Reflections disabled before lowering car detail</label>
+        <label><input type="checkbox" /> Game installed on SSD, not an old HDD</label>
+        <label><input type="checkbox" /> RTSS/RivaTuner and overlays tested off if crashing</label>
+        <label><input type="checkbox" /> 8GB GPU avoids Extreme texture settings</label>
+      </div>
+    </div>
+  </div>`;
+}
+
 function sectionBlocks(sections) {
   if (!sections) return "";
   return sections.map((section) => `<div class="content-panel" id="${section.id}">
@@ -570,6 +638,7 @@ function render(page) {
         <div class="content-stack">
           ${factsBlock(page.facts)}
           ${tableBlock(page.table)}
+          ${pcToolsBlock(page)}
           <div id="sections">${sectionBlocks(page.sections)}</div>
           ${faqBlock(page.faqs)}
           ${sourcesBlock(page.sources)}
