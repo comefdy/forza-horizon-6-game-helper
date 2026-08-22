@@ -97,3 +97,93 @@ if (settingsTool) {
 
   renderPreset();
 }
+
+const starterTool = document.querySelector("[data-starter-tool]");
+if (starterTool) {
+  const form = starterTool.querySelector(".starter-form");
+  const output = starterTool.querySelector("[data-starter-output]");
+  const title = starterTool.querySelector("[data-starter-title]");
+  const note = starterTool.querySelector("[data-starter-note]");
+  const copyButton = starterTool.querySelector("[data-copy-starter]");
+
+  function getStarterPath() {
+    const data = Object.fromEntries(new FormData(form).entries());
+    const paths = {
+      balanced: {
+        name: "Toyota Celica GT-Four Balanced Path",
+        car: "1994 Toyota Celica GT-Four ST205",
+        role: "Balanced road, dirt and early progression",
+        upgrades: "Tires, brakes, suspension, then modest power",
+        tune: "Grip-first rally-style tune",
+        next: "Add a street or drift car after the first wristband"
+      },
+      road: {
+        name: "Nissan Silvia Street Path",
+        car: "1989 Nissan Silvia K's",
+        role: "Street racing, handling practice and drift learning",
+        upgrades: "Tires, brakes, weight, then acceleration",
+        tune: "Road grip tune first; separate drift tune later",
+        next: "Buy or unlock a dirt-capable car before mixed-surface events"
+      },
+      dirt: {
+        name: "GMC Jimmy Dirt Path",
+        car: "1970 GMC Jimmy",
+        role: "Dirt, off-road, exploration and rough surfaces",
+        upgrades: "Off-road tires, suspension travel, brakes, then torque",
+        tune: "Control-first off-road tune",
+        next: "Keep a lighter road car for street and circuit events"
+      },
+      drift: {
+        name: "Silvia Drift Learning Path",
+        car: "1989 Nissan Silvia K's",
+        role: "Learning angle, throttle control and low-cost drift setup",
+        upgrades: "Drift tires or sport tires, differential, suspension, steering angle",
+        tune: "Dedicated drift tune only",
+        next: "Do not use the drift build for normal road races"
+      }
+    };
+
+    const path = { ...paths[data.goal] };
+    if (data.style === "safe") path.note = "Safe handling is the priority: keep PI modest and avoid huge power jumps.";
+    if (data.style === "fast") path.note = "Add acceleration only after the car already brakes and turns cleanly.";
+    if (data.style === "slide") path.note = "Sliding is easier with a dedicated tune; do not mix drift and race setups.";
+    if (data.credits === "save") path.credits = "Save credits by upgrading one main car lightly and using rewards for your second role.";
+    if (data.credits === "upgrade") path.credits = "Upgrade one main car, but keep enough credits for a second event type.";
+    return path;
+  }
+
+  function renderStarterPath() {
+    const path = getStarterPath();
+    title.textContent = path.name;
+    note.textContent = path.note;
+    output.innerHTML = [
+      ["Starter Car", path.car],
+      ["Best For", path.role],
+      ["Upgrade Order", path.upgrades],
+      ["Tune Direction", path.tune],
+      ["Credits Rule", path.credits],
+      ["Next Step", path.next]
+    ].map(([label, value]) => `
+      <div class="setting-chip">
+        <span>${label}</span>
+        <strong>${value}</strong>
+      </div>
+    `).join("");
+  }
+
+  form.addEventListener("change", renderStarterPath);
+  copyButton.addEventListener("click", async () => {
+    const path = getStarterPath();
+    const text = `${path.name}\nStarter Car: ${path.car}\nBest For: ${path.role}\nUpgrade Order: ${path.upgrades}\nTune Direction: ${path.tune}\nCredits Rule: ${path.credits}\nNext Step: ${path.next}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      copyButton.textContent = "Copied";
+      window.setTimeout(() => { copyButton.textContent = "Copy Path"; }, 1500);
+    } catch {
+      copyButton.textContent = "Copy Failed";
+      window.setTimeout(() => { copyButton.textContent = "Copy Path"; }, 1500);
+    }
+  });
+
+  renderStarterPath();
+}

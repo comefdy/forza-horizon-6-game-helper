@@ -38,22 +38,91 @@
       <div class="layout">
         <aside class="toc">
     <p class="eyebrow">On This Page</p>
-    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
+    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
   </aside>
         <div class="content-stack">
           <div class="content-panel" id="facts">
     <h2>Quick Facts</h2>
-    <div class="badge-row"><span class="badge">First two hours</span><span class="badge">Road and dirt coverage</span><span class="badge">Cheap upgrades</span><span class="badge">No-spoilers advice</span><span class="badge">Credits priority</span></div>
+    <div class="badge-row"><span class="badge">First two hours</span><span class="badge">Official starter choices</span><span class="badge">Road and dirt coverage</span><span class="badge">Cheap upgrades</span><span class="badge">Credits priority</span></div>
   </div>
           <div class="content-panel" id="table">
     <h2>Quick Reference</h2>
     <table class="data-table">
-      <thead><tr><th>Need</th><th>Starter Car Logic</th><th>Upgrade Priority</th></tr></thead>
-      <tbody><tr><td>Road racing</td><td>Stable grip car with predictable braking</td><td>Tires, brakes and weight before raw horsepower.</td></tr><tr><td>Street racing</td><td>Good launch and forgiving handling</td><td>AWD or traction-friendly setup for beginners.</td></tr><tr><td>Dirt</td><td>Rally or off-road capable car</td><td>Suspension, tires and controllability.</td></tr><tr><td>Drift</td><td>RWD car with room to learn angle</td><td>Use a dedicated drift tune instead of a road tune.</td></tr><tr><td>Exploration</td><td>Flexible car that handles mixed roads</td><td>Balanced build and reliability over top speed.</td></tr></tbody>
+      <thead><tr><th>Starter Need</th><th>Recommended Direction</th><th>Upgrade Priority</th></tr></thead>
+      <tbody><tr><td>Balanced first pick</td><td>1994 Toyota Celica GT-Four ST205</td><td>Tires, brakes and rally-friendly grip before raw horsepower.</td></tr><tr><td>Street and drift learning</td><td>1989 Nissan Silvia K's</td><td>Keep it controllable; use a dedicated drift tune instead of a road tune.</td></tr><tr><td>Dirt and exploration</td><td>1970 GMC Jimmy</td><td>Suspension, off-road tires and controllability for mixed surfaces.</td></tr><tr><td>Road racing backup</td><td>Stable grip car with predictable braking</td><td>Tires, brakes and weight before engine swaps.</td></tr><tr><td>Credits plan</td><td>Do not sink all money into one high-PI build</td><td>Keep enough credits for upgrades across multiple event types.</td></tr></tbody>
     </table>
   </div>
           
-          <div id="sections"></div>
+          <div class="tool-stack" id="starter-finder">
+    <div class="content-panel settings-tool" data-starter-tool>
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">Interactive Tool</p>
+          <h2>Starter Car Finder</h2>
+          <p>Pick what you want to do first and get a starter direction. This is designed for the first two hours, before you have a deep garage or credits to waste.</p>
+        </div>
+        <span class="tool-pill">No spoilers</span>
+      </div>
+      <form class="tool-form starter-form">
+        <label>First Goal
+          <select name="goal">
+            <option value="balanced">Balanced progress</option>
+            <option value="road">Road and street races</option>
+            <option value="dirt">Dirt and off-road</option>
+            <option value="drift">Drift practice</option>
+          </select>
+        </label>
+        <label>Driving Style
+          <select name="style">
+            <option value="safe">Safe handling</option>
+            <option value="fast">Fast acceleration</option>
+            <option value="slide">Sliding and control</option>
+          </select>
+        </label>
+        <label>Credits Plan
+          <select name="credits">
+            <option value="save">Save credits</option>
+            <option value="upgrade">Upgrade one main car</option>
+          </select>
+        </label>
+      </form>
+      <div class="preset-output" aria-live="polite">
+        <div>
+          <p class="panel-label">Recommended Starter Path</p>
+          <h3 data-starter-title>Balanced Starter Path</h3>
+          <p data-starter-note>Use a forgiving car first, then build a second car for the event type that gives you trouble.</p>
+        </div>
+        <button class="button subtle" type="button" data-copy-starter>Copy Path</button>
+      </div>
+      <div class="settings-grid" data-starter-output></div>
+    </div>
+
+    <div class="content-panel">
+      <p class="eyebrow">Beginner Tool</p>
+      <h2>First Two Hours Checklist</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> Finish the opening route before clearing random map icons</label>
+        <label><input type="checkbox" /> Keep one road/street car and one dirt/off-road option</label>
+        <label><input type="checkbox" /> Upgrade tires and brakes before chasing horsepower</label>
+        <label><input type="checkbox" /> Use a separate drift tune instead of reusing a road tune</label>
+        <label><input type="checkbox" /> Save credits for event coverage, not only collection cars</label>
+        <label><input type="checkbox" /> Check Festival Playlist only after core systems unlock</label>
+      </div>
+    </div>
+  </div>
+          <div id="sections"><div class="content-panel" id="official-starters">
+    <h2>Official Starter Choices</h2>
+    <p>The official first-drive material points new players toward three very different early choices: the 1989 Nissan Silvia K's, 1994 Toyota Celica GT-Four ST205 and 1970 GMC Jimmy. Treat them as roles, not trophies: Silvia for street and drift learning, Celica for balanced grip and rally-style control, and Jimmy for off-road comfort.</p>
+    
+  </div><div class="content-panel" id="credits">
+    <h2>Early Credits Priority</h2>
+    <p>Spend first on grip, brakes and control. A single overpowered car can feel exciting, but beginners usually progress faster with two or three manageable cars that cover road, dirt and exploration.</p>
+    
+  </div><div class="content-panel" id="upgrade-order">
+    <h2>Upgrade Order</h2>
+    <p>Start with tire compound, tire width, brakes, weight and suspension before big horsepower. Power upgrades are easier to enjoy after the car already turns, stops and launches cleanly.</p>
+    
+  </div></div>
           <div class="content-panel" id="faq">
     <h2>FAQ</h2>
     <h3>Can a wrong first car ruin progression?</h3><p>No. The first choice matters less than learning events, using sensible upgrades and collecting later rewards.</p><h3>Should beginners spend all credits on one car?</h3><p>No. Keep credits for upgrades and a small set of cars that cover different event types.</p><h3>Should new players use tune codes?</h3><p>Tune codes help early, but players should still learn why a tune is for road, dirt or drift.</p>

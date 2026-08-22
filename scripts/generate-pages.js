@@ -306,17 +306,23 @@ const pages = [
     h1: "Forza Horizon 6 Best Starter Cars",
     eyebrow: "Beginner Cars",
     intro: "The best starter car is not always the fastest car. New players need forgiving handling, cheap upgrades, useful event coverage and a car that stays relevant after the first few wristband unlocks.",
-    facts: ["First two hours", "Road and dirt coverage", "Cheap upgrades", "No-spoilers advice", "Credits priority"],
+    facts: ["First two hours", "Official starter choices", "Road and dirt coverage", "Cheap upgrades", "Credits priority"],
     table: {
-      headers: ["Need", "Starter Car Logic", "Upgrade Priority"],
+      headers: ["Starter Need", "Recommended Direction", "Upgrade Priority"],
       rows: [
-        ["Road racing", "Stable grip car with predictable braking", "Tires, brakes and weight before raw horsepower."],
-        ["Street racing", "Good launch and forgiving handling", "AWD or traction-friendly setup for beginners."],
-        ["Dirt", "Rally or off-road capable car", "Suspension, tires and controllability."],
-        ["Drift", "RWD car with room to learn angle", "Use a dedicated drift tune instead of a road tune."],
-        ["Exploration", "Flexible car that handles mixed roads", "Balanced build and reliability over top speed."]
+        ["Balanced first pick", "1994 Toyota Celica GT-Four ST205", "Tires, brakes and rally-friendly grip before raw horsepower."],
+        ["Street and drift learning", "1989 Nissan Silvia K's", "Keep it controllable; use a dedicated drift tune instead of a road tune."],
+        ["Dirt and exploration", "1970 GMC Jimmy", "Suspension, off-road tires and controllability for mixed surfaces."],
+        ["Road racing backup", "Stable grip car with predictable braking", "Tires, brakes and weight before engine swaps."],
+        ["Credits plan", "Do not sink all money into one high-PI build", "Keep enough credits for upgrades across multiple event types."]
       ]
     },
+    starterTools: true,
+    sections: [
+      { id: "official-starters", title: "Official Starter Choices", body: "The official first-drive material points new players toward three very different early choices: the 1989 Nissan Silvia K's, 1994 Toyota Celica GT-Four ST205 and 1970 GMC Jimmy. Treat them as roles, not trophies: Silvia for street and drift learning, Celica for balanced grip and rally-style control, and Jimmy for off-road comfort." },
+      { id: "credits", title: "Early Credits Priority", body: "Spend first on grip, brakes and control. A single overpowered car can feel exciting, but beginners usually progress faster with two or three manageable cars that cover road, dirt and exploration." },
+      { id: "upgrade-order", title: "Upgrade Order", body: "Start with tire compound, tire width, brakes, weight and suspension before big horsepower. Power upgrades are easier to enjoy after the car already turns, stops and launches cleanly." }
+    ],
     faqs: [
       ["Can a wrong first car ruin progression?", "No. The first choice matters less than learning events, using sensible upgrades and collecting later rewards."],
       ["Should beginners spend all credits on one car?", "No. Keep credits for upgrades and a small set of cars that cover different event types."],
@@ -577,6 +583,67 @@ function pcToolsBlock(page) {
   </div>`;
 }
 
+function starterToolsBlock(page) {
+  if (!page.starterTools) return "";
+  return `<div class="tool-stack" id="starter-finder">
+    <div class="content-panel settings-tool" data-starter-tool>
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">Interactive Tool</p>
+          <h2>Starter Car Finder</h2>
+          <p>Pick what you want to do first and get a starter direction. This is designed for the first two hours, before you have a deep garage or credits to waste.</p>
+        </div>
+        <span class="tool-pill">No spoilers</span>
+      </div>
+      <form class="tool-form starter-form">
+        <label>First Goal
+          <select name="goal">
+            <option value="balanced">Balanced progress</option>
+            <option value="road">Road and street races</option>
+            <option value="dirt">Dirt and off-road</option>
+            <option value="drift">Drift practice</option>
+          </select>
+        </label>
+        <label>Driving Style
+          <select name="style">
+            <option value="safe">Safe handling</option>
+            <option value="fast">Fast acceleration</option>
+            <option value="slide">Sliding and control</option>
+          </select>
+        </label>
+        <label>Credits Plan
+          <select name="credits">
+            <option value="save">Save credits</option>
+            <option value="upgrade">Upgrade one main car</option>
+          </select>
+        </label>
+      </form>
+      <div class="preset-output" aria-live="polite">
+        <div>
+          <p class="panel-label">Recommended Starter Path</p>
+          <h3 data-starter-title>Balanced Starter Path</h3>
+          <p data-starter-note>Use a forgiving car first, then build a second car for the event type that gives you trouble.</p>
+        </div>
+        <button class="button subtle" type="button" data-copy-starter>Copy Path</button>
+      </div>
+      <div class="settings-grid" data-starter-output></div>
+    </div>
+
+    <div class="content-panel">
+      <p class="eyebrow">Beginner Tool</p>
+      <h2>First Two Hours Checklist</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> Finish the opening route before clearing random map icons</label>
+        <label><input type="checkbox" /> Keep one road/street car and one dirt/off-road option</label>
+        <label><input type="checkbox" /> Upgrade tires and brakes before chasing horsepower</label>
+        <label><input type="checkbox" /> Use a separate drift tune instead of reusing a road tune</label>
+        <label><input type="checkbox" /> Save credits for event coverage, not only collection cars</label>
+        <label><input type="checkbox" /> Check Festival Playlist only after core systems unlock</label>
+      </div>
+    </div>
+  </div>`;
+}
+
 function sectionBlocks(sections) {
   if (!sections) return "";
   return sections.map((section) => `<div class="content-panel" id="${section.id}">
@@ -639,6 +706,7 @@ function render(page) {
           ${factsBlock(page.facts)}
           ${tableBlock(page.table)}
           ${pcToolsBlock(page)}
+          ${starterToolsBlock(page)}
           <div id="sections">${sectionBlocks(page.sections)}</div>
           ${faqBlock(page.faqs)}
           ${sourcesBlock(page.sources)}
