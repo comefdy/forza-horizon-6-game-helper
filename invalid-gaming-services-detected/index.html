@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://forza-horizon-6-game-helper.vercel.app/invalid-gaming-services-detected/","url":"https://forza-horizon-6-game-helper.vercel.app/invalid-gaming-services-detected/","name":"Forza Horizon 6 Invalid Gaming Services Detected Fix","description":"Fix Forza Horizon 6 invalid Gaming Services detected errors with Xbox app repair steps, Microsoft Store checks, Windows updates, overlays and reinstall options.","isPartOf":{"@type":"WebSite","name":"Forza Horizon 6 Wiki","url":"https://forza-horizon-6-game-helper.vercel.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://forza-horizon-6-game-helper.vercel.app/"},{"@type":"ListItem","position":2,"name":"Forza Horizon 6 Invalid Gaming Services Detected","item":"https://forza-horizon-6-game-helper.vercel.app/invalid-gaming-services-detected/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is invalid Gaming Services detected a Forza-only bug?","acceptedAnswer":{"@type":"Answer","text":"Not always. It usually points to Windows Gaming Services, Xbox app, Microsoft Store or account entitlement state, so fixing the service layer matters."}},{"@type":"Question","name":"Should I reinstall Forza Horizon 6 first?","acceptedAnswer":{"@type":"Answer","text":"No. Reinstalling is slow and may not fix a broken service package. Start with Xbox app and Gaming Services repair steps."}},{"@type":"Question","name":"Does this affect Steam players?","acceptedAnswer":{"@type":"Answer","text":"It can. Steam launches may still depend on Xbox identity or Microsoft services, especially around sign-in and entitlement checks."}},{"@type":"Question","name":"Can overlays cause launch problems?","acceptedAnswer":{"@type":"Answer","text":"Yes. Test with overlays, performance injectors and recording tools disabled if the game closes after splash screen."}}]}]}</script>
   </head>
   <body>
     <header class="site-header">
@@ -38,7 +39,7 @@
       <div class="layout">
         <aside class="toc">
     <p class="eyebrow">On This Page</p>
-    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#fix-tool">Fix Tool</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
+    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#fix-tool">Fix Tool</a><a href="#more-tables">More Tables</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
   </aside>
         <div class="content-stack">
           <div class="content-panel" id="facts">
@@ -108,6 +109,21 @@
         <label><input type="checkbox" /> Repair or reset Xbox app before deleting game files</label>
         <label><input type="checkbox" /> Reinstall the full game only after service fixes fail</label>
       </div>
+    </div>
+  </div>
+          <div id="more-tables" class="content-stack">
+    <div class="content-panel">
+      <h2>Repair Order</h2>
+      <table class="data-table">
+      <thead><tr><th>Priority</th><th>Action</th><th>Why This Comes First</th></tr></thead>
+      <tbody><tr><td>1</td><td>Restart Windows, then update Xbox app and Microsoft Store apps</td><td>Fast, low risk and often refreshes broken service state.</td></tr><tr><td>2</td><td>Run Gaming Services Repair Tool if the Xbox app offers it</td><td>Targets the service layer without deleting the full game.</td></tr><tr><td>3</td><td>Confirm Microsoft Store and Xbox app accounts match</td><td>Entitlement mismatches can look like launch or install failures.</td></tr><tr><td>4</td><td>Disable overlays, RTSS, capture tools and injectors</td><td>Useful when the game reaches splash screen then closes.</td></tr><tr><td>5</td><td>Repair/reset Xbox app, Microsoft Store and Gaming Services</td><td>Deeper fix after basic account and update checks fail.</td></tr><tr><td>6</td><td>Reinstall Forza Horizon 6</td><td>Slowest option; use only after service-level fixes fail.</td></tr></tbody>
+    </table>
+    </div><div class="content-panel">
+      <h2>Do Not Skip These Checks</h2>
+      <table class="data-table">
+      <thead><tr><th>Check</th><th>Good Sign</th><th>Bad Sign</th></tr></thead>
+      <tbody><tr><td>Same account in Store and Xbox app</td><td>Library, Game Pass and purchase status agree</td><td>Store account owns access but Xbox app uses a different account.</td></tr><tr><td>Windows and Xbox app updated</td><td>No pending Microsoft Store app updates</td><td>Gaming Services or Xbox app update keeps failing.</td></tr><tr><td>Overlays disabled during test</td><td>Game reaches menus after overlays are off</td><td>Crash still happens before menu with a clean background.</td></tr><tr><td>Steam file verification</td><td>Steam files validate, then Xbox identity succeeds</td><td>Steam validates but Xbox sign-in or Gaming Services still blocks launch.</td></tr></tbody>
+    </table>
     </div>
   </div>
           <div id="sections"><div class="content-panel" id="quick-fix">

@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://forza-horizon-6-game-helper.vercel.app/pc-settings/","url":"https://forza-horizon-6-game-helper.vercel.app/pc-settings/","name":"Forza Horizon 6 PC Settings — Best FPS, 8GB GPU & Fixes","description":"Use the best Forza Horizon 6 PC settings for FPS, 8GB GPUs, DLSS, FSR, XeSS, RTGI, reflections, ghosting, low GPU usage and crash troubleshooting.","isPartOf":{"@type":"WebSite","name":"Forza Horizon 6 Wiki","url":"https://forza-horizon-6-game-helper.vercel.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://forza-horizon-6-game-helper.vercel.app/"},{"@type":"ListItem","position":2,"name":"Forza Horizon 6 PC Settings","item":"https://forza-horizon-6-game-helper.vercel.app/pc-settings/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the biggest FPS win?","acceptedAnswer":{"@type":"Answer","text":"Turn off raytraced reflections and avoid high RTGI before lowering car detail or audio quality."}},{"@type":"Question","name":"What should 8GB GPU players use?","acceptedAnswer":{"@type":"Answer","text":"Use High texture quality, High geometry, Screen Space GI Medium or High, Screen Space Reflections High and ray tracing off."}},{"@type":"Question","name":"Why do cars look ghosted?","acceptedAnswer":{"@type":"Answer","text":"Upscaling and anti-aliasing can create motion artifacts. Compare DLSS presets, TAA, FSR and XeSS rather than judging only average FPS."}},{"@type":"Question","name":"Is an SSD required?","acceptedAnswer":{"@type":"Answer","text":"Steam system requirements and player reports both point toward SSD installation as the safe recommendation."}}]}]}</script>
   </head>
   <body>
     <header class="site-header">
@@ -38,7 +39,7 @@
       <div class="layout">
         <aside class="toc">
     <p class="eyebrow">On This Page</p>
-    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
+    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#more-tables">More Tables</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
   </aside>
         <div class="content-stack">
           <div class="content-panel" id="facts">
@@ -117,12 +118,27 @@
   </div>
           
           
+          <div id="more-tables" class="content-stack">
+    <div class="content-panel">
+      <h2>Hardware Presets</h2>
+      <table class="data-table">
+      <thead><tr><th>PC Type</th><th>Target</th><th>Recommended Starting Point</th></tr></thead>
+      <tbody><tr><td>8GB GPU</td><td>Stable 1080p or 1440p</td><td>High textures, High geometry, Screen Space GI Medium, RT off, particles Low, upscaling Quality.</td></tr><tr><td>10-12GB GPU</td><td>Balanced 1440p</td><td>High textures, High or Ultra geometry, Screen Space GI High, RTGI Off or Medium, reflections High.</td></tr><tr><td>16GB+ GPU</td><td>Visual quality</td><td>Test Ultra geometry, higher reflections and RTGI Medium, but keep RT reflections off if FPS drops.</td></tr><tr><td>Handheld / low power</td><td>Consistency</td><td>Use Medium-heavy preset, upscaling Balanced, RT off, particles Low and background apps closed.</td></tr></tbody>
+    </table>
+    </div><div class="content-panel">
+      <h2>Symptoms and Fixes</h2>
+      <table class="data-table">
+      <thead><tr><th>Problem</th><th>Likely Cause</th><th>Player-Friendly Fix</th></tr></thead>
+      <tbody><tr><td>Micro-stutter while driving fast</td><td>VRAM pressure, shader compilation or storage</td><td>Lower Extreme textures first, keep the game on SSD and repeat the same test route.</td></tr><tr><td>Ghosting around cars</td><td>Upscaling or anti-aliasing artifact</td><td>Compare DLSS/FSR/XeSS Quality and TAA while following the same car at speed.</td></tr><tr><td>Rain or snow looks wrong</td><td>Particle setting or effects state</td><td>Switch effects higher once, apply, then return to the preferred preset and retest.</td></tr><tr><td>FPS drops at night</td><td>Reflections, fog and lighting cost</td><td>Reduce RT features before reducing car detail; test Screen Space GI Medium.</td></tr></tbody>
+    </table>
+    </div>
+  </div>
           <div id="sections"><div class="content-panel" id="quick-answer">
     <h2>Quick Answer</h2>
     <p>For most players, start with High textures, High geometry, Screen Space GI Medium or High, Screen Space Reflections High, RTGI Off or Medium, RT Reflections Off, Shader High and Volumetric Fog High. Keep Audio and Motion Blur Quality high unless you are troubleshooting.</p>
     
   </div><div class="content-panel" id="hardware-presets">
-    <h2>Hardware Presets</h2>
+    <h2>Which Preset Should You Start With?</h2>
     <p>High-end PCs can experiment with RTGI Medium and higher reflections. Mid-range PCs should prioritize Screen Space GI and reflections. 8GB GPUs should avoid Extreme texture settings and turn off ray tracing first. Handheld-style devices should target stability before visual extras.</p>
     
   </div><div class="content-panel" id="troubleshooting">

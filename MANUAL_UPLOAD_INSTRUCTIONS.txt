@@ -1,18 +1,23 @@
-Manual GitHub upload package for commit 329a0f5
+Manual GitHub upload package for commit 218155c
 
 Goal:
-Upload these files to https://github.com/comefdy/forza-horizon-6-game-helper so GitHub main matches the local commit.
+Upload these files to GitHub after the previous 19-page version is already live.
+
+What changed:
+- Added FAQPage + BreadcrumbList JSON-LD structured data to generated guide pages.
+- Deepened /pc-settings/ with hardware presets and symptoms/fixes tables.
+- Deepened /invalid-gaming-services-detected/ with repair order and do-not-skip checks.
+- Deepened /how-to-play-smoothly/ with diagnosis and one-change testing tables.
 
 Recommended method:
-1. Open the GitHub repo in browser.
+1. Open https://github.com/comefdy/forza-horizon-6-game-helper in browser.
 2. Click Add file -> Upload files.
-3. Drag the CONTENTS of this folder into GitHub, keeping folders such as invalid-gaming-services-detected, how-to-play-smoothly, ps5, scripts, src, guides, etc.
+3. Drag the CONTENTS of this folder into GitHub.
 4. Commit directly to main.
-5. Suggested commit message: feat: add search intent fix pages
-6. After GitHub accepts the upload, Vercel should redeploy automatically.
+5. Suggested commit message: feat: deepen search intent pages
+6. Vercel should redeploy automatically.
 
-Important new URLs after upload:
+After deploy, check:
+/pc-settings/
 /invalid-gaming-services-detected/
 /how-to-play-smoothly/
-/ps5/
-/sitemap.xml should contain 19 URLs.

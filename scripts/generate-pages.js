@@ -284,9 +284,31 @@ const pages = [
         ["Upscaling", "DLSS / FSR / XeSS Quality", "Use quality modes first; test ghosting on the same route before changing presets."]
       ]
     },
+    extraTables: [
+      {
+        title: "Hardware Presets",
+        headers: ["PC Type", "Target", "Recommended Starting Point"],
+        rows: [
+          ["8GB GPU", "Stable 1080p or 1440p", "High textures, High geometry, Screen Space GI Medium, RT off, particles Low, upscaling Quality."],
+          ["10-12GB GPU", "Balanced 1440p", "High textures, High or Ultra geometry, Screen Space GI High, RTGI Off or Medium, reflections High."],
+          ["16GB+ GPU", "Visual quality", "Test Ultra geometry, higher reflections and RTGI Medium, but keep RT reflections off if FPS drops."],
+          ["Handheld / low power", "Consistency", "Use Medium-heavy preset, upscaling Balanced, RT off, particles Low and background apps closed."]
+        ]
+      },
+      {
+        title: "Symptoms and Fixes",
+        headers: ["Problem", "Likely Cause", "Player-Friendly Fix"],
+        rows: [
+          ["Micro-stutter while driving fast", "VRAM pressure, shader compilation or storage", "Lower Extreme textures first, keep the game on SSD and repeat the same test route."],
+          ["Ghosting around cars", "Upscaling or anti-aliasing artifact", "Compare DLSS/FSR/XeSS Quality and TAA while following the same car at speed."],
+          ["Rain or snow looks wrong", "Particle setting or effects state", "Switch effects higher once, apply, then return to the preferred preset and retest."],
+          ["FPS drops at night", "Reflections, fog and lighting cost", "Reduce RT features before reducing car detail; test Screen Space GI Medium."]
+        ]
+      }
+    ],
     sections: [
       { id: "quick-answer", title: "Quick Answer", body: "For most players, start with High textures, High geometry, Screen Space GI Medium or High, Screen Space Reflections High, RTGI Off or Medium, RT Reflections Off, Shader High and Volumetric Fog High. Keep Audio and Motion Blur Quality high unless you are troubleshooting." },
-      { id: "hardware-presets", title: "Hardware Presets", body: "High-end PCs can experiment with RTGI Medium and higher reflections. Mid-range PCs should prioritize Screen Space GI and reflections. 8GB GPUs should avoid Extreme texture settings and turn off ray tracing first. Handheld-style devices should target stability before visual extras." },
+      { id: "hardware-presets", title: "Which Preset Should You Start With?", body: "High-end PCs can experiment with RTGI Medium and higher reflections. Mid-range PCs should prioritize Screen Space GI and reflections. 8GB GPUs should avoid Extreme texture settings and turn off ray tracing first. Handheld-style devices should target stability before visual extras." },
       { id: "troubleshooting", title: "Troubleshooting Priorities", body: "If DLSS is missing, check GPU support, driver version and Windows graphics settings. If the car shows ghosting, compare DLSS Quality, DLSS 4.5 presets, TAA, FSR and XeSS on the same route. If the game crashes, check overlays such as RTSS/RivaTuner, C++ Redistributable, GPU driver and whether the game is installed on an SSD." }
     ],
     tools: true,
@@ -319,6 +341,30 @@ const pages = [
         ["Error returns after reboot", "Cached service state or old app package", "Repair or reset Xbox app, Microsoft Store and Gaming Services in Windows settings."]
       ]
     },
+    extraTables: [
+      {
+        title: "Repair Order",
+        headers: ["Priority", "Action", "Why This Comes First"],
+        rows: [
+          ["1", "Restart Windows, then update Xbox app and Microsoft Store apps", "Fast, low risk and often refreshes broken service state."],
+          ["2", "Run Gaming Services Repair Tool if the Xbox app offers it", "Targets the service layer without deleting the full game."],
+          ["3", "Confirm Microsoft Store and Xbox app accounts match", "Entitlement mismatches can look like launch or install failures."],
+          ["4", "Disable overlays, RTSS, capture tools and injectors", "Useful when the game reaches splash screen then closes."],
+          ["5", "Repair/reset Xbox app, Microsoft Store and Gaming Services", "Deeper fix after basic account and update checks fail."],
+          ["6", "Reinstall Forza Horizon 6", "Slowest option; use only after service-level fixes fail."]
+        ]
+      },
+      {
+        title: "Do Not Skip These Checks",
+        headers: ["Check", "Good Sign", "Bad Sign"],
+        rows: [
+          ["Same account in Store and Xbox app", "Library, Game Pass and purchase status agree", "Store account owns access but Xbox app uses a different account."],
+          ["Windows and Xbox app updated", "No pending Microsoft Store app updates", "Gaming Services or Xbox app update keeps failing."],
+          ["Overlays disabled during test", "Game reaches menus after overlays are off", "Crash still happens before menu with a clean background."],
+          ["Steam file verification", "Steam files validate, then Xbox identity succeeds", "Steam validates but Xbox sign-in or Gaming Services still blocks launch."]
+        ]
+      }
+    ],
     sections: [
       { id: "quick-fix", title: "Fast Fix Order", body: "Start with the least destructive checks: restart Windows, update the Xbox app, update Microsoft Store apps, run the Gaming Services Repair Tool from the Xbox app if available, then test launch again before reinstalling the game." },
       { id: "account-check", title: "Account and Store Check", body: "Many launch loops come from account mismatch. Confirm the Microsoft Store, Xbox app and Windows Xbox identity prompts are using the account that owns the game or Game Pass entitlement." },
@@ -357,6 +403,29 @@ const pages = [
         ["Low input delay", "Favor stable FPS, disable unnecessary capture overlays", "Using heavy background recording while troubleshooting."]
       ]
     },
+    extraTables: [
+      {
+        title: "Smoothness Diagnosis",
+        headers: ["What You Feel", "What To Check", "Best Next Page"],
+        rows: [
+          ["Stutter on turns or city routes", "VRAM, storage, shader cache, overlays", "/pc-settings/"],
+          ["Good FPS but blurry cars", "Upscaling preset, TAA, motion artifacts", "/pc-settings/"],
+          ["Game will not open before settings menu", "Gaming Services, Xbox app, Store account", "/invalid-gaming-services-detected/"],
+          ["Car feels hard to control", "Assists, steering, tune and tire choice", "/tuning/"],
+          ["Early races feel too hard", "Starter car role and upgrade order", "/best-starter-cars/"]
+        ]
+      },
+      {
+        title: "One-Change Testing Method",
+        headers: ["Step", "Action", "Why It Helps"],
+        rows: [
+          ["1", "Choose one road with traffic, reflections and fast corners", "A fixed route makes changes easier to compare."],
+          ["2", "Change only one setting group at a time", "You can tell whether VRAM, RT or upscaling caused the improvement."],
+          ["3", "Drive the same car at the same time of day if possible", "Removes weather, traffic and route differences."],
+          ["4", "Write down the preset that feels smooth, not only the highest FPS", "Smooth driving matters more than a single benchmark number."]
+        ]
+      }
+    ],
     sections: [
       { id: "quick-answer", title: "Quick Answer", body: "For most mid-range PCs, start with High textures, High geometry, High screen-space reflections, Medium or High screen-space GI, ray-traced reflections off, RTGI off or Medium only on stronger GPUs, and upscaling on Quality or Balanced at higher resolutions." },
       { id: "test-route", title: "Use One Test Route", body: "Pick one route with traffic, reflections and fast corners, then repeat it after each settings change. Smoothness is easier to feel when you stop changing the car, weather and route at the same time." },
@@ -586,14 +655,33 @@ function cardGrid(cards) {
     </article>`).join("")}</div>`;
 }
 
+function linkedCell(cell) {
+  const value = String(cell);
+  return value.startsWith("/") ? `<a href="${value}">${value}</a>` : escapeHtml(value);
+}
+
+function tableMarkup(table) {
+  return `<table class="data-table">
+      <thead><tr>${table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>
+      <tbody>${table.rows.map((row) => `<tr>${row.map((cell) => `<td>${linkedCell(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+    </table>`;
+}
+
 function tableBlock(table) {
   if (!table) return "";
   return `<div class="content-panel" id="table">
     <h2>Quick Reference</h2>
-    <table class="data-table">
-      <thead><tr>${table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr></thead>
-      <tbody>${table.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell.startsWith("/") ? `<a href="${cell}">${cell}</a>` : escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
-    </table>
+    ${tableMarkup(table)}
+  </div>`;
+}
+
+function extraTablesBlock(extraTables) {
+  if (!extraTables) return "";
+  return `<div id="more-tables" class="content-stack">
+    ${extraTables.map((table) => `<div class="content-panel">
+      <h2>${escapeHtml(table.title)}</h2>
+      ${tableMarkup(table)}
+    </div>`).join("")}
   </div>`;
 }
 
@@ -627,6 +715,58 @@ function linksBlock(links) {
     <h2>Related Guides</h2>
     <div class="badge-row">${links.map((href) => `<a class="badge" href="${href}">${href}</a>`).join("")}</div>
   </div>`;
+}
+
+function structuredDataBlock(page) {
+  const pageUrl = `${siteUrl}/${page.slug}/`;
+  const graph = [
+    {
+      "@type": "WebPage",
+      "@id": pageUrl,
+      "url": pageUrl,
+      "name": page.title,
+      "description": page.description,
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Forza Horizon 6 Wiki",
+        "url": `${siteUrl}/`
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": page.h1,
+          "item": pageUrl
+        }
+      ]
+    }
+  ];
+
+  if (page.faqs) {
+    graph.push({
+      "@type": "FAQPage",
+      "mainEntity": page.faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        "name": question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": answer
+        }
+      }))
+    });
+  }
+
+  const json = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
+  return `<script type="application/ld+json">${json}</script>`;
 }
 
 function pcToolsBlock(page) {
@@ -831,6 +971,7 @@ function toc(page) {
     page.facts && ["facts", "Quick Facts"],
     page.table && ["table", "Quick Reference"],
     page.fixTools && ["fix-tool", "Fix Tool"],
+    page.extraTables && ["more-tables", "More Tables"],
     page.sections && ["sections", "Sections"],
     page.faqs && ["faq", "FAQ"],
     page.sources && ["sources", "Sources"],
@@ -865,6 +1006,7 @@ function render(page) {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
+    ${structuredDataBlock(page)}
   </head>
   <body>
     ${header(page.slug)}
@@ -882,6 +1024,7 @@ function render(page) {
           ${pcToolsBlock(page)}
           ${starterToolsBlock(page)}
           ${fixToolsBlock(page)}
+          ${extraTablesBlock(page.extraTables)}
           <div id="sections">${sectionBlocks(page.sections)}</div>
           ${faqBlock(page.faqs)}
           ${sourcesBlock(page.sources)}

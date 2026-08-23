@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://forza-horizon-6-game-helper.vercel.app/how-to-play-smoothly/","url":"https://forza-horizon-6-game-helper.vercel.app/how-to-play-smoothly/","name":"Forza Horizon 6 How to Play Smoothly — FPS & Stutter Fix","description":"Make Forza Horizon 6 run smoothly with practical FPS settings, upscaling choices, 8GB GPU advice, ray tracing tradeoffs, stutter checks and launch fixes.","isPartOf":{"@type":"WebSite","name":"Forza Horizon 6 Wiki","url":"https://forza-horizon-6-game-helper.vercel.app/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://forza-horizon-6-game-helper.vercel.app/"},{"@type":"ListItem","position":2,"name":"Forza Horizon 6: How to Play It Smoothly","item":"https://forza-horizon-6-game-helper.vercel.app/how-to-play-smoothly/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the fastest way to make Forza Horizon 6 smoother?","acceptedAnswer":{"@type":"Answer","text":"Turn off ray-traced reflections first, use High instead of Extreme textures on 8GB GPUs, and test upscaling Quality or Balanced."}},{"@type":"Question","name":"Why does the game stutter even when average FPS is high?","acceptedAnswer":{"@type":"Answer","text":"Average FPS can hide VRAM spikes, shader compilation, overlays, background capture tools or slow storage."}},{"@type":"Question","name":"Should I use DLSS, FSR or XeSS?","acceptedAnswer":{"@type":"Answer","text":"Use the upscaler that looks cleanest on your GPU and monitor. Compare moving cars and fences, not only static screenshots."}},{"@type":"Question","name":"Is the PC Settings page more detailed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use /pc-settings/ for a full preset table and interactive recommender."}}]}]}</script>
   </head>
   <body>
     <header class="site-header">
@@ -38,7 +39,7 @@
       <div class="layout">
         <aside class="toc">
     <p class="eyebrow">On This Page</p>
-    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
+    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#more-tables">More Tables</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
   </aside>
         <div class="content-stack">
           <div class="content-panel" id="facts">
@@ -55,6 +56,21 @@
           
           
           
+          <div id="more-tables" class="content-stack">
+    <div class="content-panel">
+      <h2>Smoothness Diagnosis</h2>
+      <table class="data-table">
+      <thead><tr><th>What You Feel</th><th>What To Check</th><th>Best Next Page</th></tr></thead>
+      <tbody><tr><td>Stutter on turns or city routes</td><td>VRAM, storage, shader cache, overlays</td><td><a href="/pc-settings/">/pc-settings/</a></td></tr><tr><td>Good FPS but blurry cars</td><td>Upscaling preset, TAA, motion artifacts</td><td><a href="/pc-settings/">/pc-settings/</a></td></tr><tr><td>Game will not open before settings menu</td><td>Gaming Services, Xbox app, Store account</td><td><a href="/invalid-gaming-services-detected/">/invalid-gaming-services-detected/</a></td></tr><tr><td>Car feels hard to control</td><td>Assists, steering, tune and tire choice</td><td><a href="/tuning/">/tuning/</a></td></tr><tr><td>Early races feel too hard</td><td>Starter car role and upgrade order</td><td><a href="/best-starter-cars/">/best-starter-cars/</a></td></tr></tbody>
+    </table>
+    </div><div class="content-panel">
+      <h2>One-Change Testing Method</h2>
+      <table class="data-table">
+      <thead><tr><th>Step</th><th>Action</th><th>Why It Helps</th></tr></thead>
+      <tbody><tr><td>1</td><td>Choose one road with traffic, reflections and fast corners</td><td>A fixed route makes changes easier to compare.</td></tr><tr><td>2</td><td>Change only one setting group at a time</td><td>You can tell whether VRAM, RT or upscaling caused the improvement.</td></tr><tr><td>3</td><td>Drive the same car at the same time of day if possible</td><td>Removes weather, traffic and route differences.</td></tr><tr><td>4</td><td>Write down the preset that feels smooth, not only the highest FPS</td><td>Smooth driving matters more than a single benchmark number.</td></tr></tbody>
+    </table>
+    </div>
+  </div>
           <div id="sections"><div class="content-panel" id="quick-answer">
     <h2>Quick Answer</h2>
     <p>For most mid-range PCs, start with High textures, High geometry, High screen-space reflections, Medium or High screen-space GI, ray-traced reflections off, RTGI off or Medium only on stronger GPUs, and upscaling on Quality or Balanced at higher resolutions.</p>
