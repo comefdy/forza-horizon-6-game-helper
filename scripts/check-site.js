@@ -16,6 +16,11 @@ const pages = [
 ];
 
 const failures = [];
+const requiredHomepageMarkers = [
+  ["media-card", "homepage official media card"],
+  ["ad-slot", "homepage ad-ready placement"],
+  ["review-note", "homepage reviewed note"]
+];
 
 for (const page of pages) {
   const fullPath = path.join(root, page);
@@ -29,6 +34,14 @@ for (const page of pages) {
   if (h1Count !== 1) failures.push(`${page}: expected one h1, got ${h1Count}`);
   if (h2Count < 2) failures.push(`${page}: expected at least two h2 headings, got ${h2Count}`);
   if (!description || description[1].length < 90) failures.push(`${page}: missing or thin description`);
+  if (page !== "index.html" && !html.includes("ad-slot")) {
+    failures.push(`${page}: missing ad-ready placement`);
+  }
+}
+
+const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
+for (const [marker, label] of requiredHomepageMarkers) {
+  if (!homepage.includes(marker)) failures.push(`index.html: missing ${label}`);
 }
 
 const css = fs.readFileSync(path.join(root, "src", "styles.css"), "utf8");

@@ -11,6 +11,30 @@ if (toggle && nav) {
   toggle.addEventListener("click", () => nav.classList.toggle("open"));
 }
 
+const siteSearch = document.querySelector("[data-site-search]");
+if (siteSearch) {
+  const routes = [
+    { terms: ["gaming services", "gaming service", "invalid", "launch error", "error", "xbox app", "fix"], href: "/invalid-gaming-services-detected/" },
+    { terms: ["smooth", "stutter", "fps", "lag", "low fps", "upscaling"], href: "/how-to-play-smoothly/" },
+    { terms: ["pc", "settings", "graphics", "dlss", "fsr", "vram", "8gb"], href: "/pc-settings/" },
+    { terms: ["car list", "cars", "vehicle", "vehicles"], href: "/car-list/" },
+    { terms: ["starter", "first car", "beginner car"], href: "/best-starter-cars/" },
+    { terms: ["beginner", "start", "first"], href: "/beginner-guide/" },
+    { terms: ["map", "japan", "tokyo", "touge"], href: "/map/" },
+    { terms: ["tuning", "tune", "drift"], href: "/tuning/" },
+    { terms: ["ps5", "playstation", "platform"], href: "/ps5/" },
+    { terms: ["edition", "steam", "xbox", "game pass"], href: "/editions/" }
+  ];
+
+  siteSearch.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const input = siteSearch.querySelector("input[type='search']");
+    const query = (input?.value || "").trim().toLowerCase();
+    const match = routes.find((route) => route.terms.some((term) => query.includes(term)));
+    window.location.href = match ? match.href : "/guides/";
+  });
+}
+
 const settingsTool = document.querySelector("[data-settings-tool]");
 if (settingsTool) {
   const form = settingsTool.querySelector(".tool-form");

@@ -721,6 +721,13 @@ function extraTablesBlock(extraTables) {
   </div>`;
 }
 
+function adBlock() {
+  return `<aside class="ad-slot" aria-label="Advertisement placeholder">
+    <span>Advertisement</span>
+    <strong>Future display ad space</strong>
+  </aside>`;
+}
+
 function factsBlock(facts) {
   if (!facts) return "";
   return `<div class="content-panel" id="facts">
@@ -1038,6 +1045,7 @@ function toc(page) {
 }
 
 function render(page) {
+  const updated = page.updated || "August 23, 2026";
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -1068,6 +1076,7 @@ function render(page) {
         <p class="eyebrow">${escapeHtml(page.eyebrow)}</p>
         <h1>${escapeHtml(page.h1)}</h1>
         <p class="hero-text">${escapeHtml(page.intro)}</p>
+        <p class="updated-note">Last updated: ${escapeHtml(updated)} · Independent fan-made guide</p>
       </section>
       <div class="layout">
         ${toc(page)}
@@ -1079,6 +1088,7 @@ function render(page) {
           ${starterToolsBlock(page)}
           ${fixToolsBlock(page)}
           ${extraTablesBlock(page.extraTables)}
+          ${adBlock()}
           <div id="sections">${sectionBlocks(page.sections)}</div>
           ${faqBlock(page.faqs)}
           ${sourcesBlock(page.sources)}
