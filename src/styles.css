@@ -532,6 +532,10 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.tool-form.fix-form {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .tool-form label {
   display: grid;
   gap: 0.35rem;

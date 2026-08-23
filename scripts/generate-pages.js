@@ -8,9 +8,9 @@ const nav = [
   ["/cars/", "Cars"],
   ["/car-list/", "Car List"],
   ["/pc-settings/", "PC Settings"],
+  ["/invalid-gaming-services-detected/", "Fixes"],
   ["/festival-playlist/", "Playlist"],
-  ["/map/", "Map"],
-  ["/roblox-forza-horizon-6/", "Roblox"]
+  ["/map/", "Map"]
 ];
 
 const footer = `
@@ -46,10 +46,10 @@ const pages = [
         cards: [
           ["Beginner Guide", "No-spoilers first steps, credits, wristbands, early cars and common mistakes.", "/beginner-guide/"],
           ["PC Settings", "Optimized settings, 8GB GPU advice, upscaling, RTGI and troubleshooting.", "/pc-settings/"],
+          ["Gaming Services Fix", "Fix invalid Gaming Services detected, Xbox app launch loops and install checks.", "/invalid-gaming-services-detected/"],
           ["Car List", "Table-first vehicle source fields for make, class, country and unlock route.", "/car-list/"],
           ["Best Starter Cars", "Early car choices by event type, handling, upgrade cost and progression.", "/best-starter-cars/"],
-          ["Festival Playlist", "Weekly rewards, challenge types, reward cars and update cadence.", "/festival-playlist/"],
-          ["Editions", "Standard, Deluxe, Premium, Game Pass, Steam and Xbox purchase facts.", "/editions/"]
+          ["Smooth PC Play", "Settings and troubleshooting route for stutter, ghosting, FPS drops and VRAM pressure.", "/how-to-play-smoothly/"]
         ]
       },
       {
@@ -59,6 +59,7 @@ const pages = [
         cards: [
           ["Cars", "Cars, car list, best cars, starter cars, JDM, reward cars and Car Pass topics.", "/cars/"],
           ["Settings", "PC settings, wheel settings, controller setup, handheld advice and known issues.", "/pc-settings/"],
+          ["Common Fixes", "Gaming Services, Xbox app, Steam launch checks, overlays and repair workflow.", "/invalid-gaming-services-detected/"],
           ["Map", "Japan map, Tokyo, touge routes, photo locations, collectibles and fast travel.", "/map/"],
           ["Events", "Festival Playlist, Series updates, weekly reset, rewards and challenge guides.", "/festival-playlist/"],
           ["Progression", "Beginner guide, money, wristbands, Festival Points, achievements and unlocks.", "/beginner-guide/"],
@@ -297,6 +298,118 @@ const pages = [
     ],
     sources: ["https://forza.net/news/forza-horizon-6-pc-experience", "https://forza.net/news/forza-horizon-6-thank-you", "https://store.steampowered.com/app/2483190/Forza_Horizon_6/", "https://www.ign.com/articles/forza-horizon-6-pc-settings-guide", "https://www.reddit.com/r/OptimizedGaming/comments/1ti3owm/forza_horizon_6_optimization_guide_an_in_depth/"],
     links: ["/beginner-guide/", "/tuning/", "/best-cars/", "/guides/"]
+  },
+  {
+    slug: "invalid-gaming-services-detected",
+    title: "Forza Horizon 6 Invalid Gaming Services Detected Fix",
+    description: "Fix Forza Horizon 6 invalid Gaming Services detected errors with Xbox app repair steps, Microsoft Store checks, Windows updates, overlays and reinstall options.",
+    keywords: "Forza Horizon 6 invalid gaming services detected, gaming service fix, Xbox app",
+    h1: "Forza Horizon 6 Invalid Gaming Services Detected",
+    eyebrow: "Launch Fix Guide",
+    intro: "This page is built for players who can see Forza Horizon 6 in their library but cannot launch cleanly because Windows, Xbox app, Microsoft Store or Gaming Services is out of sync. Work through the quick checks first, then use the deeper repair steps only if the error keeps returning.",
+    facts: ["Gaming Services error", "Xbox app repair", "Microsoft Store sync", "Steam launch checks", "Overlay conflicts"],
+    fixTools: true,
+    table: {
+      headers: ["Symptom", "Most Likely Cause", "First Action"],
+      rows: [
+        ["Invalid Gaming Services detected", "Gaming Services registration or Xbox app state is broken", "Open the Xbox app, use Gaming Services Repair Tool, then restart Windows."],
+        ["Install button loops or does nothing", "Microsoft Store and Xbox app account mismatch", "Confirm the same Microsoft account in Store and Xbox app."],
+        ["Steam launches Xbox sign-in then fails", "Gaming Services dependency or Xbox identity sign-in issue", "Update Windows, Xbox app and Gaming Services before reinstalling the game."],
+        ["Game closes after splash screen", "Overlay, injector or background app conflict", "Test with overlays, RTSS and recording tools disabled."],
+        ["Error returns after reboot", "Cached service state or old app package", "Repair or reset Xbox app, Microsoft Store and Gaming Services in Windows settings."]
+      ]
+    },
+    sections: [
+      { id: "quick-fix", title: "Fast Fix Order", body: "Start with the least destructive checks: restart Windows, update the Xbox app, update Microsoft Store apps, run the Gaming Services Repair Tool from the Xbox app if available, then test launch again before reinstalling the game." },
+      { id: "account-check", title: "Account and Store Check", body: "Many launch loops come from account mismatch. Confirm the Microsoft Store, Xbox app and Windows Xbox identity prompts are using the account that owns the game or Game Pass entitlement." },
+      { id: "steam-note", title: "Steam Players", body: "Steam players can still hit Xbox identity or Gaming Services problems because the game may call Microsoft sign-in services. Keep Steam, Windows, Xbox app and Gaming Services updated before assuming the Steam install itself is corrupt." },
+      { id: "when-to-reinstall", title: "When to Reinstall", body: "Reinstalling the full game should be late in the workflow. Try app repair, service repair, Windows updates and overlay testing first, because the issue often sits outside the game files." }
+    ],
+    faqs: [
+      ["Is invalid Gaming Services detected a Forza-only bug?", "Not always. It usually points to Windows Gaming Services, Xbox app, Microsoft Store or account entitlement state, so fixing the service layer matters."],
+      ["Should I reinstall Forza Horizon 6 first?", "No. Reinstalling is slow and may not fix a broken service package. Start with Xbox app and Gaming Services repair steps."],
+      ["Does this affect Steam players?", "It can. Steam launches may still depend on Xbox identity or Microsoft services, especially around sign-in and entitlement checks."],
+      ["Can overlays cause launch problems?", "Yes. Test with overlays, performance injectors and recording tools disabled if the game closes after splash screen."]
+    ],
+    sources: [
+      "https://support.xbox.com/en-US/help/games-apps/troubleshooting/gaming-services-repair-tool",
+      "https://support.xbox.com/en-US/help/games-apps/troubleshooting/troubleshoot-games-windows-10",
+      "https://support.forzamotorsport.net/hc/en-us/articles/360007594514-My-Game-is-Not-Launching-or-is-Crashing-on-PC"
+    ],
+    links: ["/pc-settings/", "/how-to-play-smoothly/", "/editions/", "/guides/"]
+  },
+  {
+    slug: "how-to-play-smoothly",
+    title: "Forza Horizon 6 How to Play Smoothly — FPS & Stutter Fix",
+    description: "Make Forza Horizon 6 run smoothly with practical FPS settings, upscaling choices, 8GB GPU advice, ray tracing tradeoffs, stutter checks and launch fixes.",
+    keywords: "Forza Horizon 6 how to play smoothly, smooth FPS, stutter fix, best settings",
+    h1: "Forza Horizon 6: How to Play It Smoothly",
+    eyebrow: "Smooth Gameplay Guide",
+    intro: "Players searching how to play Forza Horizon 6 smoothly usually need a simple answer: reduce VRAM pressure, use upscaling carefully, avoid expensive ray tracing first, and test changes on the same road route. This guide turns the PC settings page into a quick action plan.",
+    facts: ["Smooth FPS route", "8GB GPU safe settings", "Stutter checks", "Upscaling advice", "Ray tracing tradeoffs"],
+    table: {
+      headers: ["Goal", "Change First", "Avoid First"],
+      rows: [
+        ["Stable 60 FPS", "Textures High, Geometry High, RT off, particles Low or Medium", "Dropping resolution before testing upscaling."],
+        ["Less stutter", "Close overlays, use SSD, update GPU driver, avoid Extreme textures on 8GB GPUs", "Maxing ray tracing while VRAM is already full."],
+        ["Sharper image", "Use Quality upscaling or TAA, then compare ghosting on moving cars", "Changing five settings at once."],
+        ["Better night and rain performance", "Test particles, fog and reflections on the same route", "Assuming daytime benchmark results apply everywhere."],
+        ["Low input delay", "Favor stable FPS, disable unnecessary capture overlays", "Using heavy background recording while troubleshooting."]
+      ]
+    },
+    sections: [
+      { id: "quick-answer", title: "Quick Answer", body: "For most mid-range PCs, start with High textures, High geometry, High screen-space reflections, Medium or High screen-space GI, ray-traced reflections off, RTGI off or Medium only on stronger GPUs, and upscaling on Quality or Balanced at higher resolutions." },
+      { id: "test-route", title: "Use One Test Route", body: "Pick one route with traffic, reflections and fast corners, then repeat it after each settings change. Smoothness is easier to feel when you stop changing the car, weather and route at the same time." },
+      { id: "vram", title: "Watch VRAM Before Visuals", body: "If an 8GB GPU stutters, do not start by lowering everything. Keep the settings that preserve driving clarity, then reduce Extreme textures, heavy RT features and particle effects first." },
+      { id: "tool", title: "Use the Settings Recommender", body: "The PC Settings page has an interactive recommender that outputs a preset based on VRAM, resolution, FPS target and ray tracing preference." }
+    ],
+    faqs: [
+      ["What is the fastest way to make Forza Horizon 6 smoother?", "Turn off ray-traced reflections first, use High instead of Extreme textures on 8GB GPUs, and test upscaling Quality or Balanced."],
+      ["Why does the game stutter even when average FPS is high?", "Average FPS can hide VRAM spikes, shader compilation, overlays, background capture tools or slow storage."],
+      ["Should I use DLSS, FSR or XeSS?", "Use the upscaler that looks cleanest on your GPU and monitor. Compare moving cars and fences, not only static screenshots."],
+      ["Is the PC Settings page more detailed?", "Yes. Use /pc-settings/ for a full preset table and interactive recommender."]
+    ],
+    sources: [
+      "https://www.ign.com/articles/forza-horizon-6-pc-settings-guide",
+      "https://www.reddit.com/r/OptimizedGaming/comments/1ti3owm/forza_horizon_6_optimization_guide_an_in_depth/",
+      "https://support.forzamotorsport.net/hc/en-us/articles/360007594514-My-Game-is-Not-Launching-or-is-Crashing-on-PC"
+    ],
+    links: ["/pc-settings/", "/invalid-gaming-services-detected/", "/tuning/", "/best-starter-cars/"]
+  },
+  {
+    slug: "ps5",
+    title: "Forza Horizon 6 PS5 — Platform Status & Alternatives",
+    description: "Check Forza Horizon 6 PS5 search intent, official platform status, Xbox and PC options, controller notes, cloud play possibilities and what to verify before buying.",
+    keywords: "Forza Horizon 6 PS5, FH6 PlayStation 5, Forza Horizon 6 platforms",
+    h1: "Forza Horizon 6 PS5",
+    eyebrow: "Platform Status",
+    intro: "Many players search Forza Horizon 6 PS5 because they want to know whether they can play the game on PlayStation 5. Treat platform claims carefully: use official Xbox, Steam and Forza pages first, then update this page only when an official PlayStation release is confirmed.",
+    facts: ["PS5 search demand", "Verify official platforms", "Xbox Series X|S", "Windows PC", "Steam and Game Pass"],
+    table: {
+      headers: ["Question", "Current Site Answer", "Where to Verify"],
+      rows: [
+        ["Is Forza Horizon 6 on PS5?", "Use official platform pages before making a purchase decision.", "Xbox Store, Forza official site and Steam."],
+        ["Can I play on PC?", "The site tracks Windows PC and Steam information separately.", "/editions/"],
+        ["Can I use a controller on PC?", "Yes, controller setup belongs in PC settings and beginner pages.", "/pc-settings/"],
+        ["Should I buy Xbox or PC for FH6?", "Compare Game Pass, Steam ownership, PC performance and console convenience.", "/editions/"]
+      ]
+    },
+    sections: [
+      { id: "why-search", title: "Why This Page Exists", body: "Google autocomplete shows PS5 search demand. A short, honest platform page is better than forcing PS5 users into a generic wiki page that does not answer their question." },
+      { id: "official-check", title: "Official Check First", body: "Before writing that a platform is supported, check the Xbox Store, Forza.net and Steam listing. Platform availability can change, and wrong platform advice damages trust quickly." },
+      { id: "alternatives", title: "Alternatives to Check", body: "If PS5 support is not officially listed, players should compare Xbox Series X|S, Windows PC, Steam and Game Pass routes instead of buying based on rumors." }
+    ],
+    faqs: [
+      ["Why does Google suggest Forza Horizon 6 PS5?", "Players often search platform availability before buying hardware or choosing a store."],
+      ["Should this page promise PS5 support?", "No. It should explain the official platform status and link to sources that players can verify."],
+      ["Can this page still rank?", "Yes, because it directly answers a real search query and sends users to platform pages instead of hiding the answer."]
+    ],
+    sources: [
+      "https://www.xbox.com/en-US/games/forza-horizon-6",
+      "https://store.steampowered.com/app/2483190/Forza_Horizon_6/",
+      "https://forza.net/"
+    ],
+    links: ["/editions/", "/pc-settings/", "/guides/", "/how-to-play-smoothly/"]
   },
   {
     slug: "best-starter-cars",
@@ -644,6 +757,66 @@ function starterToolsBlock(page) {
   </div>`;
 }
 
+function fixToolsBlock(page) {
+  if (!page.fixTools) return "";
+  return `<div class="tool-stack" id="fix-tool">
+    <div class="content-panel settings-tool" data-fix-tool>
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">Interactive Tool</p>
+          <h2>Gaming Services Fix Finder</h2>
+          <p>Select where the launch fails and get the next repair path. The tool keeps reinstalling the full game as a late step because service repair is usually faster.</p>
+        </div>
+        <span class="tool-pill">Launch fix</span>
+      </div>
+      <form class="tool-form fix-form">
+        <label>Where It Fails
+          <select name="stage">
+            <option value="launch">Launch error or invalid Gaming Services</option>
+            <option value="install">Install button loops or download fails</option>
+            <option value="signin">Xbox sign-in or entitlement problem</option>
+            <option value="crash">Splash screen then crash</option>
+          </select>
+        </label>
+        <label>Store Version
+          <select name="store">
+            <option value="xbox">Xbox app / Game Pass</option>
+            <option value="steam">Steam</option>
+          </select>
+        </label>
+        <label>Overlays
+          <select name="overlays">
+            <option value="unknown">Not tested yet</option>
+            <option value="off">Already tested off</option>
+          </select>
+        </label>
+      </form>
+      <div class="preset-output" aria-live="polite">
+        <div>
+          <p class="panel-label">Recommended Fix Path</p>
+          <h3 data-fix-title>Service Repair First</h3>
+          <p data-fix-note>Start with Gaming Services and Xbox app repair before reinstalling the full game.</p>
+        </div>
+        <button class="button subtle" type="button" data-copy-fix>Copy Steps</button>
+      </div>
+      <div class="settings-grid" data-fix-output></div>
+    </div>
+
+    <div class="content-panel">
+      <p class="eyebrow">Do First</p>
+      <h2>Safe Repair Checklist</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> Restart Windows after updating Xbox app or Gaming Services</label>
+        <label><input type="checkbox" /> Confirm Microsoft Store and Xbox app use the same account</label>
+        <label><input type="checkbox" /> Update Windows before reinstalling the game</label>
+        <label><input type="checkbox" /> Test overlays and performance injectors off</label>
+        <label><input type="checkbox" /> Repair or reset Xbox app before deleting game files</label>
+        <label><input type="checkbox" /> Reinstall the full game only after service fixes fail</label>
+      </div>
+    </div>
+  </div>`;
+}
+
 function sectionBlocks(sections) {
   if (!sections) return "";
   return sections.map((section) => `<div class="content-panel" id="${section.id}">
@@ -657,6 +830,7 @@ function toc(page) {
   const items = [
     page.facts && ["facts", "Quick Facts"],
     page.table && ["table", "Quick Reference"],
+    page.fixTools && ["fix-tool", "Fix Tool"],
     page.sections && ["sections", "Sections"],
     page.faqs && ["faq", "FAQ"],
     page.sources && ["sources", "Sources"],
@@ -707,6 +881,7 @@ function render(page) {
           ${tableBlock(page.table)}
           ${pcToolsBlock(page)}
           ${starterToolsBlock(page)}
+          ${fixToolsBlock(page)}
           <div id="sections">${sectionBlocks(page.sections)}</div>
           ${faqBlock(page.faqs)}
           ${sourcesBlock(page.sources)}

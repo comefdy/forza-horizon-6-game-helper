@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forza Horizon 6 Invalid Gaming Services Detected Fix</title>
+    <meta name="description" content="Fix Forza Horizon 6 invalid Gaming Services detected errors with Xbox app repair steps, Microsoft Store checks, Windows updates, overlays and reinstall options." />
+    <meta name="keywords" content="Forza Horizon 6 invalid gaming services detected, gaming service fix, Xbox app" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPB5DDFCYS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RPB5DDFCYS');
+    </script>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/android-chrome-192x192.png" alt="" />
+      <span>FH6 Wiki</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" aria-label="Primary navigation"><a class="" href="/guides/">Guides</a><a class="" href="/cars/">Cars</a><a class="" href="/car-list/">Car List</a><a class="" href="/pc-settings/">PC Settings</a><a class="active" href="/invalid-gaming-services-detected/">Fixes</a><a class="" href="/festival-playlist/">Playlist</a><a class="" href="/map/">Map</a></nav>
+  </header>
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Launch Fix Guide</p>
+        <h1>Forza Horizon 6 Invalid Gaming Services Detected</h1>
+        <p class="hero-text">This page is built for players who can see Forza Horizon 6 in their library but cannot launch cleanly because Windows, Xbox app, Microsoft Store or Gaming Services is out of sync. Work through the quick checks first, then use the deeper repair steps only if the error keeps returning.</p>
+      </section>
+      <div class="layout">
+        <aside class="toc">
+    <p class="eyebrow">On This Page</p>
+    <a href="#facts">Quick Facts</a><a href="#table">Quick Reference</a><a href="#fix-tool">Fix Tool</a><a href="#sections">Sections</a><a href="#faq">FAQ</a><a href="#sources">Sources</a><a href="#related">Related Guides</a>
+  </aside>
+        <div class="content-stack">
+          <div class="content-panel" id="facts">
+    <h2>Quick Facts</h2>
+    <div class="badge-row"><span class="badge">Gaming Services error</span><span class="badge">Xbox app repair</span><span class="badge">Microsoft Store sync</span><span class="badge">Steam launch checks</span><span class="badge">Overlay conflicts</span></div>
+  </div>
+          <div class="content-panel" id="table">
+    <h2>Quick Reference</h2>
+    <table class="data-table">
+      <thead><tr><th>Symptom</th><th>Most Likely Cause</th><th>First Action</th></tr></thead>
+      <tbody><tr><td>Invalid Gaming Services detected</td><td>Gaming Services registration or Xbox app state is broken</td><td>Open the Xbox app, use Gaming Services Repair Tool, then restart Windows.</td></tr><tr><td>Install button loops or does nothing</td><td>Microsoft Store and Xbox app account mismatch</td><td>Confirm the same Microsoft account in Store and Xbox app.</td></tr><tr><td>Steam launches Xbox sign-in then fails</td><td>Gaming Services dependency or Xbox identity sign-in issue</td><td>Update Windows, Xbox app and Gaming Services before reinstalling the game.</td></tr><tr><td>Game closes after splash screen</td><td>Overlay, injector or background app conflict</td><td>Test with overlays, RTSS and recording tools disabled.</td></tr><tr><td>Error returns after reboot</td><td>Cached service state or old app package</td><td>Repair or reset Xbox app, Microsoft Store and Gaming Services in Windows settings.</td></tr></tbody>
+    </table>
+  </div>
+          
+          
+          <div class="tool-stack" id="fix-tool">
+    <div class="content-panel settings-tool" data-fix-tool>
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">Interactive Tool</p>
+          <h2>Gaming Services Fix Finder</h2>
+          <p>Select where the launch fails and get the next repair path. The tool keeps reinstalling the full game as a late step because service repair is usually faster.</p>
+        </div>
+        <span class="tool-pill">Launch fix</span>
+      </div>
+      <form class="tool-form fix-form">
+        <label>Where It Fails
+          <select name="stage">
+            <option value="launch">Launch error or invalid Gaming Services</option>
+            <option value="install">Install button loops or download fails</option>
+            <option value="signin">Xbox sign-in or entitlement problem</option>
+            <option value="crash">Splash screen then crash</option>
+          </select>
+        </label>
+        <label>Store Version
+          <select name="store">
+            <option value="xbox">Xbox app / Game Pass</option>
+            <option value="steam">Steam</option>
+          </select>
+        </label>
+        <label>Overlays
+          <select name="overlays">
+            <option value="unknown">Not tested yet</option>
+            <option value="off">Already tested off</option>
+          </select>
+        </label>
+      </form>
+      <div class="preset-output" aria-live="polite">
+        <div>
+          <p class="panel-label">Recommended Fix Path</p>
+          <h3 data-fix-title>Service Repair First</h3>
+          <p data-fix-note>Start with Gaming Services and Xbox app repair before reinstalling the full game.</p>
+        </div>
+        <button class="button subtle" type="button" data-copy-fix>Copy Steps</button>
+      </div>
+      <div class="settings-grid" data-fix-output></div>
+    </div>
+
+    <div class="content-panel">
+      <p class="eyebrow">Do First</p>
+      <h2>Safe Repair Checklist</h2>
+      <div class="checklist-grid">
+        <label><input type="checkbox" /> Restart Windows after updating Xbox app or Gaming Services</label>
+        <label><input type="checkbox" /> Confirm Microsoft Store and Xbox app use the same account</label>
+        <label><input type="checkbox" /> Update Windows before reinstalling the game</label>
+        <label><input type="checkbox" /> Test overlays and performance injectors off</label>
+        <label><input type="checkbox" /> Repair or reset Xbox app before deleting game files</label>
+        <label><input type="checkbox" /> Reinstall the full game only after service fixes fail</label>
+      </div>
+    </div>
+  </div>
+          <div id="sections"><div class="content-panel" id="quick-fix">
+    <h2>Fast Fix Order</h2>
+    <p>Start with the least destructive checks: restart Windows, update the Xbox app, update Microsoft Store apps, run the Gaming Services Repair Tool from the Xbox app if available, then test launch again before reinstalling the game.</p>
+    
+  </div><div class="content-panel" id="account-check">
+    <h2>Account and Store Check</h2>
+    <p>Many launch loops come from account mismatch. Confirm the Microsoft Store, Xbox app and Windows Xbox identity prompts are using the account that owns the game or Game Pass entitlement.</p>
+    
+  </div><div class="content-panel" id="steam-note">
+    <h2>Steam Players</h2>
+    <p>Steam players can still hit Xbox identity or Gaming Services problems because the game may call Microsoft sign-in services. Keep Steam, Windows, Xbox app and Gaming Services updated before assuming the Steam install itself is corrupt.</p>
+    
+  </div><div class="content-panel" id="when-to-reinstall">
+    <h2>When to Reinstall</h2>
+    <p>Reinstalling the full game should be late in the workflow. Try app repair, service repair, Windows updates and overlay testing first, because the issue often sits outside the game files.</p>
+    
+  </div></div>
+          <div class="content-panel" id="faq">
+    <h2>FAQ</h2>
+    <h3>Is invalid Gaming Services detected a Forza-only bug?</h3><p>Not always. It usually points to Windows Gaming Services, Xbox app, Microsoft Store or account entitlement state, so fixing the service layer matters.</p><h3>Should I reinstall Forza Horizon 6 first?</h3><p>No. Reinstalling is slow and may not fix a broken service package. Start with Xbox app and Gaming Services repair steps.</p><h3>Does this affect Steam players?</h3><p>It can. Steam launches may still depend on Xbox identity or Microsoft services, especially around sign-in and entitlement checks.</p><h3>Can overlays cause launch problems?</h3><p>Yes. Test with overlays, performance injectors and recording tools disabled if the game closes after splash screen.</p>
+  </div>
+          <div class="content-panel" id="sources">
+    <h2>Sources</h2>
+    <ul class="source-list"><li><a href="https://support.xbox.com/en-US/help/games-apps/troubleshooting/gaming-services-repair-tool">https://support.xbox.com/en-US/help/games-apps/troubleshooting/gaming-services-repair-tool</a></li><li><a href="https://support.xbox.com/en-US/help/games-apps/troubleshooting/troubleshoot-games-windows-10">https://support.xbox.com/en-US/help/games-apps/troubleshooting/troubleshoot-games-windows-10</a></li><li><a href="https://support.forzamotorsport.net/hc/en-us/articles/360007594514-My-Game-is-Not-Launching-or-is-Crashing-on-PC">https://support.forzamotorsport.net/hc/en-us/articles/360007594514-My-Game-is-Not-Launching-or-is-Crashing-on-PC</a></li></ul>
+  </div>
+          <div class="content-panel" id="related">
+    <h2>Related Guides</h2>
+    <div class="badge-row"><a class="badge" href="/pc-settings/">/pc-settings/</a><a class="badge" href="/how-to-play-smoothly/">/how-to-play-smoothly/</a><a class="badge" href="/editions/">/editions/</a><a class="badge" href="/guides/">/guides/</a></div>
+  </div>
+        </div>
+      </div>
+    </main>
+    
+  <footer class="site-footer">
+    <div>
+      <h2>Forza Horizon 6 Wiki</h2>
+      <p>Forza Horizon 6 Wiki is an independent fan-made guide site for players exploring Horizon Japan. It covers beginner progression, cars, map routes, Festival Playlist rewards, tuning, multiplayer modes, and official updates. This site is not affiliated with Microsoft, Xbox, Playground Games, or Turn 10 Studios.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://forza.net/">Forza Official Site</a>
+      <a href="https://www.xbox.com/en-US/games/store/forza-horizon-6/9NR1R1XWLCNB">Xbox Store</a>
+      <a href="https://discord.com/invite/forza">Official Discord</a>
+      <a href="https://www.youtube.com/@Forza">Official YouTube</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Service</a>
+    </div>
+  </footer>
+    <script src="/src/site.js"></script>
+  </body>
+</html>

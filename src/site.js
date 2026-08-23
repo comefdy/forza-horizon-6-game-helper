@@ -187,3 +187,103 @@ if (starterTool) {
 
   renderStarterPath();
 }
+
+const fixTool = document.querySelector("[data-fix-tool]");
+if (fixTool) {
+  const form = fixTool.querySelector(".fix-form");
+  const output = fixTool.querySelector("[data-fix-output]");
+  const title = fixTool.querySelector("[data-fix-title]");
+  const note = fixTool.querySelector("[data-fix-note]");
+  const copyButton = fixTool.querySelector("[data-copy-fix]");
+
+  function getFixPath() {
+    const data = Object.fromEntries(new FormData(form).entries());
+    const paths = {
+      launch: {
+        name: "Gaming Services Repair First",
+        note: "Best for invalid Gaming Services detected or launch blocked before the game window appears.",
+        steps: [
+          "Restart Windows once before changing files",
+          "Update the Xbox app and Microsoft Store apps",
+          "Run the Gaming Services Repair Tool from the Xbox app if available",
+          "Repair or reset Xbox app and Gaming Services in Windows settings",
+          "Test launch again before reinstalling Forza Horizon 6"
+        ]
+      },
+      install: {
+        name: "Store and Install Loop Fix",
+        note: "Best for install buttons that loop, pause, or fail before the game is fully installed.",
+        steps: [
+          "Confirm Microsoft Store and Xbox app use the same Microsoft account",
+          "Update Windows, Microsoft Store and Xbox app",
+          "Check available SSD space and install location",
+          "Repair Microsoft Store and Xbox app",
+          "Retry install before deleting existing game folders"
+        ]
+      },
+      signin: {
+        name: "Xbox Identity and Entitlement Check",
+        note: "Best when the game opens sign-in, then fails or says you do not own access.",
+        steps: [
+          "Sign out and back into Xbox app",
+          "Check Microsoft Store account matches the owning account",
+          "Confirm Game Pass or purchase entitlement is active",
+          "Update Xbox Identity Provider and Gaming Services",
+          "Restart Windows and test launch again"
+        ]
+      },
+      crash: {
+        name: "Splash Screen Crash Check",
+        note: "Best when the game starts but closes before menus or after a short black screen.",
+        steps: [
+          "Update GPU driver and Windows",
+          "Disable overlays, RTSS, capture tools and performance injectors",
+          "Repair Xbox app or verify Steam files",
+          "Move install to SSD if it is on old storage",
+          "Test with conservative PC settings after launch succeeds"
+        ]
+      }
+    };
+
+    const path = { ...paths[data.stage] };
+    if (data.store === "steam") {
+      path.steps = path.steps.map((step) =>
+        step.includes("Xbox app or verify Steam files") ? step : step
+      );
+      path.steps.splice(2, 0, "For Steam, verify game files after Xbox identity and Gaming Services checks");
+    }
+    if (data.overlays === "unknown") {
+      path.steps.splice(1, 0, "Disable overlays temporarily so you know they are not part of the problem");
+    }
+
+    return path;
+  }
+
+  function renderFixPath() {
+    const path = getFixPath();
+    title.textContent = path.name;
+    note.textContent = path.note;
+    output.innerHTML = path.steps.map((step, index) => `
+      <div class="setting-chip">
+        <span>Step ${index + 1}</span>
+        <strong>${step}</strong>
+      </div>
+    `).join("");
+  }
+
+  form.addEventListener("change", renderFixPath);
+  copyButton.addEventListener("click", async () => {
+    const path = getFixPath();
+    const text = `${path.name}\n${path.steps.map((step, index) => `${index + 1}. ${step}`).join("\n")}`;
+    try {
+      await navigator.clipboard.writeText(text);
+      copyButton.textContent = "Copied";
+      window.setTimeout(() => { copyButton.textContent = "Copy Steps"; }, 1500);
+    } catch {
+      copyButton.textContent = "Copy Failed";
+      window.setTimeout(() => { copyButton.textContent = "Copy Steps"; }, 1500);
+    }
+  });
+
+  renderFixPath();
+}
