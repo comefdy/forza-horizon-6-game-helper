@@ -271,6 +271,18 @@ const pages = [
     eyebrow: "Optimization Guide",
     intro: "This PC settings guide turns player testing, Reddit troubleshooting, IGN-style setup structure and official PC notes into practical settings. Start with the balanced preset, then adjust RTGI, reflections, textures and upscaling for your hardware.",
     facts: ["Quick Answer", "8GB GPU preset", "RTGI vs Screen Space GI", "DLSS / FSR / XeSS", "Ghosting and crash FAQ"],
+    flowchart: {
+      eyebrow: "Original Flowchart",
+      title: "PC Settings Decision Flow",
+      intro: "Use this original flowchart before touching every graphics option. It keeps the testing path simple: protect stability first, then add visual quality.",
+      steps: [
+        ["1", "Pick Your Target", "Choose 60 FPS, high FPS, or visual quality before changing settings."],
+        ["2", "Check VRAM", "8GB GPUs stay on High textures; 10GB+ can test higher settings carefully."],
+        ["3", "Turn RT Down First", "Disable raytraced reflections before lowering car detail or geometry."],
+        ["4", "Choose Upscaling", "Use Quality mode first, then compare ghosting on the same road route."],
+        ["5", "Retest One Route", "Drive the same route again and keep the preset that feels smooth."]
+      ]
+    },
     table: {
       headers: ["Setting", "Balanced Recommendation", "Why It Matters"],
       rows: [
@@ -331,6 +343,18 @@ const pages = [
     intro: "This page is built for players who can see Forza Horizon 6 in their library but cannot launch cleanly because Windows, Xbox app, Microsoft Store or Gaming Services is out of sync. Work through the quick checks first, then use the deeper repair steps only if the error keeps returning.",
     facts: ["Gaming Services error", "Xbox app repair", "Microsoft Store sync", "Steam launch checks", "Overlay conflicts"],
     fixTools: true,
+    flowchart: {
+      eyebrow: "Original Flowchart",
+      title: "Launch Error Repair Flow",
+      intro: "This flow keeps the fix order safe. Start with fast service checks, then move toward heavier repair only when the same error returns.",
+      steps: [
+        ["1", "Restart and Update", "Restart Windows, then update Xbox app, Store apps and Windows."],
+        ["2", "Repair Gaming Services", "Use the Xbox app repair tool or Windows app repair/reset path."],
+        ["3", "Verify Account", "Confirm Store and Xbox app use the account that owns access."],
+        ["4", "Clean Launch Test", "Disable overlays, capture tools and performance injectors once."],
+        ["5", "Reinstall Last", "Only reinstall the full game after service-level fixes fail."]
+      ]
+    },
     table: {
       headers: ["Symptom", "Most Likely Cause", "First Action"],
       rows: [
@@ -393,6 +417,18 @@ const pages = [
     eyebrow: "Smooth Gameplay Guide",
     intro: "Players searching how to play Forza Horizon 6 smoothly usually need a simple answer: reduce VRAM pressure, use upscaling carefully, avoid expensive ray tracing first, and test changes on the same road route. This guide turns the PC settings page into a quick action plan.",
     facts: ["Smooth FPS route", "8GB GPU safe settings", "Stutter checks", "Upscaling advice", "Ray tracing tradeoffs"],
+    flowchart: {
+      eyebrow: "Original Flowchart",
+      title: "Smooth Gameplay Test Flow",
+      intro: "This flow is made for players who feel stutter but do not know which setting caused it. Change one group at a time and keep the test route consistent.",
+      steps: [
+        ["1", "Choose One Route", "Pick a city or mountain route with traffic, reflections and fast corners."],
+        ["2", "Baseline Feel", "Drive once without changing five settings at the same time."],
+        ["3", "Reduce Heavy Features", "Lower RT, particles and Extreme textures before cutting resolution."],
+        ["4", "Compare Upscaling", "Test Quality or Balanced modes while watching moving cars."],
+        ["5", "Save the Preset", "Keep the setup that feels consistent, not only the highest peak FPS."]
+      ]
+    },
     table: {
       headers: ["Goal", "Change First", "Avoid First"],
       rows: [
@@ -693,6 +729,22 @@ function factsBlock(facts) {
   </div>`;
 }
 
+function flowchartBlock(flowchart) {
+  if (!flowchart) return "";
+  return `<div class="content-panel" id="flowchart">
+    <p class="eyebrow">${escapeHtml(flowchart.eyebrow)}</p>
+    <h2>${escapeHtml(flowchart.title)}</h2>
+    <p>${escapeHtml(flowchart.intro)}</p>
+    <div class="flowchart" aria-label="${escapeHtml(flowchart.title)}">
+      ${flowchart.steps.map(([number, title, body]) => `<div class="flow-step">
+        <span class="flow-number">${escapeHtml(number)}</span>
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(body)}</p>
+      </div>`).join("")}
+    </div>
+  </div>`;
+}
+
 function faqBlock(faqs) {
   if (!faqs) return "";
   return `<div class="content-panel" id="faq">
@@ -969,6 +1021,7 @@ function sectionBlocks(sections) {
 function toc(page) {
   const items = [
     page.facts && ["facts", "Quick Facts"],
+    page.flowchart && ["flowchart", "Flowchart"],
     page.table && ["table", "Quick Reference"],
     page.fixTools && ["fix-tool", "Fix Tool"],
     page.extraTables && ["more-tables", "More Tables"],
@@ -1020,6 +1073,7 @@ function render(page) {
         ${toc(page)}
         <div class="content-stack">
           ${factsBlock(page.facts)}
+          ${flowchartBlock(page.flowchart)}
           ${tableBlock(page.table)}
           ${pcToolsBlock(page)}
           ${starterToolsBlock(page)}
