@@ -16,6 +16,8 @@ const includeNames = [
   "ps5",
   "festival-playlist",
   "best-cars",
+  "treasure-cars",
+  "best-drag-cars",
   "best-starter-cars",
   "map",
   "beginner-guide",
@@ -61,3 +63,4 @@ for (const name of includeNames) {
 }
 
 console.log(`Built static site into ${dist}`);
+

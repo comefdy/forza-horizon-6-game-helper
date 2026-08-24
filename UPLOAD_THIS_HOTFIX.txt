@@ -1,8 +1,6 @@
-Hotfix: upload these two folders to the GitHub repository root:
-- treasure-cars/index.html
-- best-drag-cars/index.html
-
-Commit message: fix: deploy missing rising query pages
+Root cause: Vercel publishes dist, but scripts/build-static.js did not copy treasure-cars and best-drag-cars into dist.
+Upload the scripts folder in this package to the GitHub repository root and overwrite existing files.
+Commit message: fix: include rising query pages in dist build
 After Vercel is Ready, test:
 https://forza-horizon-6-game-helper.vercel.app/treasure-cars/
 https://forza-horizon-6-game-helper.vercel.app/best-drag-cars/

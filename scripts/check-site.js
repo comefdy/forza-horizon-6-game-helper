@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = process.cwd();
+const distRoot = path.join(root, "dist");
 const sitemapPath = path.join(root, "sitemap.xml");
 const sitemap = fs.readFileSync(sitemapPath, "utf8");
 const pages = Array.from(sitemap.matchAll(/<loc>https:\/\/forza-horizon-6-game-helper\.vercel\.app(\/[\w-]*\/?)<\/loc>/g))
@@ -23,6 +24,11 @@ for (const page of pages) {
   if (!fs.existsSync(fullPath)) {
     failures.push(`${page}: file listed in sitemap but missing locally`);
     continue;
+  }
+
+  const distPath = path.join(distRoot, page);
+  if (fs.existsSync(distRoot) && !fs.existsSync(distPath)) {
+    failures.push(`${page}: file listed in sitemap but missing from dist output`);
   }
 
   const html = fs.readFileSync(fullPath, "utf8");
@@ -61,3 +67,4 @@ if (failures.length) {
 }
 
 console.log(`SEO and responsive smoke checks passed for ${pages.length} sitemap pages.`);
+
