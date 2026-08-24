@@ -37,6 +37,8 @@ for (const page of pages) {
   const h2Count = (html.match(/<h2>/g) || []).length;
   const description = html.match(/<meta name="description" content="([^"]+)"/);
 
+  const literalNewlineEscape = String.fromCharCode(96) + "r" + String.fromCharCode(96) + "n";
+  if (html.includes(literalNewlineEscape)) failures.push(`${page}: contains literal newline escape text`);
   if (titleCount !== 1) failures.push(`${page}: expected one title, got ${titleCount}`);
   if (h1Count !== 1) failures.push(`${page}: expected one h1, got ${h1Count}`);
   if (h2Count < 2) failures.push(`${page}: expected at least two h2 headings, got ${h2Count}`);
@@ -67,4 +69,5 @@ if (failures.length) {
 }
 
 console.log(`SEO and responsive smoke checks passed for ${pages.length} sitemap pages.`);
+
 
