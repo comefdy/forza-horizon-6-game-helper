@@ -1,0 +1,8 @@
+Hotfix: upload these two folders to the GitHub repository root:
+- treasure-cars/index.html
+- best-drag-cars/index.html
+
+Commit message: fix: deploy missing rising query pages
+After Vercel is Ready, test:
+https://forza-horizon-6-game-helper.vercel.app/treasure-cars/
+https://forza-horizon-6-game-helper.vercel.app/best-drag-cars/
