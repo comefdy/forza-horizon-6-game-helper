@@ -1,5 +1,6 @@
-This is a full current-site sync package.
-Upload every file and folder in this package to GitHub repository root.
-Commit message: feat: improve homepage wiki layout
+Full current-site sync package.
+Upload every file and folder in this package to the GitHub repository root.
+Commit message: feat: add rising query guide pages
 After GitHub commit, wait for Vercel production deployment to become Ready.
-Then open the homepage and confirm the new hero, keyword hub, inner-page ad slots, and sitemap still work.
+Then refresh GSC sitemap: /sitemap.xml. It should show 21 submitted URLs.
+Key new URLs: /treasure-cars/ and /best-drag-cars/.

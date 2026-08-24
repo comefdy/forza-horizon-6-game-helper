@@ -48,6 +48,8 @@ const pages = [
           ["PC Settings", "Optimized settings, 8GB GPU advice, upscaling, RTGI and troubleshooting.", "/pc-settings/"],
           ["Gaming Services Fix", "Fix invalid Gaming Services detected, Xbox app launch loops and install checks.", "/invalid-gaming-services-detected/"],
           ["Car List", "Table-first vehicle source fields for make, class, country and unlock route.", "/car-list/"],
+          ["Treasure Cars", "Track clues, discovery routes, reward checks and spoiler-safe location notes.", "/treasure-cars/"],
+          ["Best Drag Cars", "Pick launch-focused cars and tuning priorities for drag races and speed tests.", "/best-drag-cars/"],
           ["Best Starter Cars", "Early car choices by event type, handling, upgrade cost and progression.", "/best-starter-cars/"],
           ["Smooth PC Play", "Settings and troubleshooting route for stutter, ghosting, FPS drops and VRAM pressure.", "/how-to-play-smoothly/"]
         ]
@@ -58,6 +60,8 @@ const pages = [
         body: "This directory is organized like a lightweight wiki hub: each category links to practical pages instead of only repeating the game's description.",
         cards: [
           ["Cars", "Cars, car list, best cars, starter cars, JDM, reward cars and Car Pass topics.", "/cars/"],
+          ["Treasure Cars", "Clues, map checks, reward tracking and spoiler-safe discovery workflow.", "/treasure-cars/"],
+          ["Drag Builds", "Best drag cars, launch tuning, gearing and acceleration-focused choices.", "/best-drag-cars/"],
           ["Settings", "PC settings, wheel settings, controller setup, handheld advice and known issues.", "/pc-settings/"],
           ["Common Fixes", "Gaming Services, Xbox app, Steam launch checks, overlays and repair workflow.", "/invalid-gaming-services-detected/"],
           ["Map", "Japan map, Tokyo, touge routes, photo locations, collectibles and fast travel.", "/map/"],
@@ -98,7 +102,7 @@ const pages = [
       ["What car topics should come first?", "Starter cars, JDM cars, fastest cars, drift cars and reward cars cover the strongest early search demand."]
     ],
     sources: ["https://www.xbox.com/en-US/games/forza-horizon-6", "https://forza.net/fh6cars", "https://forza.net/fh6playlists"],
-    links: ["/car-list/", "/best-cars/", "/festival-playlist/", "/tuning/"]
+    links: ["/car-list/", "/best-cars/", "/treasure-cars/", "/best-drag-cars/"]
   },
   {
     slug: "car-list",
@@ -125,7 +129,7 @@ const pages = [
       ["How often should it be updated?", "Update after Series changes, Car Pass drops and new DLC packs."]
     ],
     sources: ["https://forza.net/fh6cars", "https://forza.net/fh6playlists"],
-    links: ["/cars/", "/best-cars/", "/festival-playlist/", "/roblox-forza-horizon-6/"]
+    links: ["/cars/", "/best-cars/", "/treasure-cars/", "/festival-playlist/"]
   },
   {
     slug: "festival-playlist",
@@ -152,7 +156,7 @@ const pages = [
       ["Can missed reward cars return?", "Treat this as time-sensitive. Track history and avoid promising future returns unless official sources confirm it."]
     ],
     sources: ["https://forza.net/fh6playlists", "https://forza.net/news/forza-horizon-6-series-3"],
-    links: ["/reward-cars/", "/car-list/", "/cars/", "/best-cars/"]
+    links: ["/treasure-cars/", "/car-list/", "/cars/", "/best-cars/"]
   },
   {
     slug: "best-cars",
@@ -180,6 +184,144 @@ const pages = [
     ],
     sources: ["https://forza.net/fh6cars", "https://forza.net/fh6playlists", "https://www.xbox.com/en-US/games/forza-horizon-6"],
     links: ["/cars/", "/car-list/", "/tuning/", "/festival-playlist/"]
+  },
+  {
+    slug: "treasure-cars",
+    title: "Forza Horizon 6 Treasure Cars Guide — Clues & Rewards",
+    description: "Track Forza Horizon 6 Treasure Cars with spoiler-safe clues, map search routes, reward checks, weekly playlist notes and a practical discovery checklist.",
+    keywords: "Forza Horizon 6 treasure cars, FH6 treasure cars, treasure car locations, clues",
+    h1: "Forza Horizon 6 Treasure Cars",
+    eyebrow: "Rising Search Guide",
+    intro: "Treasure Cars is a rising Forza Horizon 6 search because players want fast help without accidentally spoiling the whole discovery loop. This page is built as a live tracker: use it to separate clues, map areas, route checks, reward status and official update notes.",
+    facts: ["Rising query", "Spoiler-safe clues", "Map route checks", "Reward tracking", "Playlist updates"],
+    flowchart: {
+      eyebrow: "Original Flowchart",
+      title: "Treasure Cars Search Flow",
+      intro: "Use this route before jumping to a full spoiler. It keeps the hunt fun while still giving players a clear next action.",
+      steps: [
+        ["1", "Read the Clue", "Write down the car hint, location hint and any event or season condition."],
+        ["2", "Mark the Region", "Narrow the map to city, touge, rural, dock, highway or festival areas."],
+        ["3", "Drive a Loop", "Use a slow visual pass before switching cars or fast traveling away."],
+        ["4", "Check Reward Status", "Confirm whether the reward is a car, credits, playlist points or cosmetic."],
+        ["5", "Update the Tracker", "Record the clue, route and result so the page can be refreshed after updates."]
+      ]
+    },
+    table: {
+      headers: ["Player Intent", "What This Page Should Answer", "Best Internal Link"],
+      rows: [
+        ["treasure cars forza horizon 6", "Current clue, likely map area, reward and spoiler level.", "/treasure-cars/"],
+        ["treasure car locations", "A route-first discovery method, then exact notes when confirmed.", "/map/"],
+        ["treasure cars rewards", "Whether the reward is limited-time, playlist-linked or permanent.", "/festival-playlist/"],
+        ["how to find treasure cars", "Clue reading, region narrowing and repeated route checks.", "/beginner-guide/"],
+        ["Japan map treasure cars", "Tokyo, touge, rural and industrial route grouping.", "/map/"]
+      ]
+    },
+    extraTables: [
+      {
+        title: "Treasure Cars Tracker Template",
+        headers: ["Field", "What To Record", "Why It Helps"],
+        rows: [
+          ["Clue Text", "Exact clue wording from the game or official update note", "Prevents vague rewrites that lose the search intent."],
+          ["Map Region", "Tokyo, touge, rural roads, industrial area, docks or festival site", "Lets players scan the right area first."],
+          ["Required Car", "Any car, class, brand or event requirement", "Avoids wasted driving with the wrong vehicle."],
+          ["Reward", "Car, credits, points or cosmetic", "Helps collectors decide if the hunt is urgent."],
+          ["Spoiler Level", "Hint only, region clue or exact location", "Lets the page serve both casual and speed-focused players."]
+        ]
+      },
+      {
+        title: "Spoiler-Safe Help Levels",
+        headers: ["Level", "What To Show", "When To Use"],
+        rows: [
+          ["Hint", "Broad clue explanation without exact spot", "First day of a new hunt."],
+          ["Region", "Likely area and recommended driving loop", "When players are stuck but still want to search."],
+          ["Exact", "Precise location and required car after confirmation", "After the clue has been verified from reliable sources."],
+          ["Archive", "Past clue, reward and date", "Useful when players search old seasonal content."]
+        ]
+      }
+    ],
+    sections: [
+      { id: "quick-answer", title: "Quick Answer", body: "Start with the clue, then narrow it to a map region and drive one consistent loop before looking for an exact spoiler. Treasure Cars pages should be updated from official playlist notes, player-confirmed evidence and map checks." },
+      { id: "why-no-fake-locations", title: "Why This Page Avoids Fake Locations", body: "Treasure Cars can change by Series, Season or update. Listing unverified coordinates would hurt trust, so this page uses a tracker structure until exact locations are confirmed." },
+      { id: "map-method", title: "Map Search Method", body: "Group possible locations by Tokyo streets, touge roads, rural roads, industrial zones, docks and festival sites. Link each confirmed hunt back to the Japan map guide." },
+      { id: "update-workflow", title: "Update Workflow", body: "When a new clue appears, record the clue text, date, likely region, required car, reward and source. Then add exact location notes only after cross-checking." }
+    ],
+    faqs: [
+      ["Are all Treasure Cars permanent?", "Treat Treasure Cars as update-sensitive until official information confirms whether a clue is permanent or seasonal."],
+      ["Why not list exact locations immediately?", "Exact locations should be added only when confirmed. A spoiler-safe structure protects trust and still helps players search."],
+      ["What should I do if I cannot find the car?", "Recheck the clue, confirm the required car or event condition, then drive the same route slowly before switching to exact-location help."],
+      ["Where should map details live?", "Use this page for clues and rewards, then link region details to the Japan map page."]
+    ],
+    sources: ["https://forza.net/fh6playlists", "https://forza.net/news", "https://www.xbox.com/en-US/games/forza-horizon-6"],
+    links: ["/map/", "/festival-playlist/", "/car-list/", "/beginner-guide/"]
+  },
+  {
+    slug: "best-drag-cars",
+    title: "Forza Horizon 6 Best Drag Cars — Fast Launch Builds",
+    description: "Find Forza Horizon 6 best drag cars by launch, acceleration, gearing, class limits, tuning direction and when to use speed-focused builds.",
+    keywords: "Forza Horizon 6 best drag car, FH6 drag cars, fastest drag build, drag tuning",
+    h1: "Forza Horizon 6 Best Drag Cars",
+    eyebrow: "Rising Search Guide",
+    intro: "Best drag car is a rising Forza Horizon 6 query because players want quick wins for straight-line races, speed traps and acceleration tests. The useful answer is not one universal car: it depends on class limit, launch grip, gearing, drivetrain and whether the event allows upgrades.",
+    facts: ["Rising query", "Launch and acceleration", "Gearing priority", "Class limits", "Drag tuning"],
+    flowchart: {
+      eyebrow: "Original Flowchart",
+      title: "Drag Car Pick Flow",
+      intro: "Use this flow before copying a build. A car that wins a runway pull may not fit a restricted class or a short launch-heavy route.",
+      steps: [
+        ["1", "Check Class Limit", "Do not choose a build that overshoots the event class."],
+        ["2", "Prioritize Launch", "For short drag routes, grip and launch can beat pure top speed."],
+        ["3", "Tune Gearing", "Set final drive so the car stays in its power band through the finish."],
+        ["4", "Test One Strip", "Run the same drag strip three times and compare consistency."],
+        ["5", "Save by Role", "Keep separate builds for drag, speed traps and road racing."]
+      ]
+    },
+    table: {
+      headers: ["Drag Need", "Best Direction", "Tuning Priority"],
+      rows: [
+        ["Short drag race", "High launch grip and strong low-speed acceleration", "Tires, launch gearing, AWD when class allows."],
+        ["Long runway pull", "High horsepower and stable high-speed gearing", "Final drive, aero balance and top-end power."],
+        ["Class-restricted event", "Car that reaches target PI without wasting points", "Weight, tires and gearbox before visual power upgrades."],
+        ["Beginner drag build", "Predictable launch and easy shifting", "Grip-first setup, clean launch and simple gear spacing."],
+        ["Speed trap crossover", "Drag car that remains stable at high speed", "Top speed, stability and route-specific braking."]
+      ]
+    },
+    extraTables: [
+      {
+        title: "Drag Build Checklist",
+        headers: ["Part", "What To Check", "Common Mistake"],
+        rows: [
+          ["Tires", "Enough grip to launch without spinning", "Adding power before the car can hook up."],
+          ["Drivetrain", "AWD for easy launch or RWD for advanced power delivery", "Choosing AWD blindly when PI cost hurts the build."],
+          ["Gearing", "Final gear reaches strong acceleration through the finish", "Leaving default gearing on a power-swapped car."],
+          ["Weight", "Lower weight improves launch and acceleration", "Spending all PI on horsepower."],
+          ["Aero", "Enough stability for high-speed routes", "Adding drag-heavy aero to a straight-line build without testing."]
+        ]
+      },
+      {
+        title: "Drag Testing Method",
+        headers: ["Step", "Action", "Reason"],
+        rows: [
+          ["1", "Use the same strip and weather if possible", "Reduces noise when comparing tunes."],
+          ["2", "Run each build three times", "One messy launch should not decide the result."],
+          ["3", "Record launch feel and finish speed", "A high top speed car may still lose a short drag."],
+          ["4", "Keep road and drag tunes separate", "Drag gearing often feels bad in normal races."]
+        ]
+      }
+    ],
+    sections: [
+      { id: "quick-answer", title: "Quick Answer", body: "The best drag car is the one that matches the class and route. For short events, prioritize launch, grip and early acceleration. For long runway pulls, prioritize horsepower, gearing and high-speed stability." },
+      { id: "launch-vs-speed", title: "Launch Beats Top Speed on Short Runs", body: "Many players overvalue top speed. If the route is short, a car that launches cleanly and shifts through the power band can beat a faster car that spins at the start." },
+      { id: "tuning", title: "Drag Tuning Priorities", body: "Start with tires, weight, drivetrain choice and gearing. Power upgrades matter, but only after the car can put power down consistently." },
+      { id: "when-to-update", title: "When Rankings Should Change", body: "Update this page after official car list changes, Car Pass drops, reward cars, balance changes or new community-tested builds." }
+    ],
+    faqs: [
+      ["What is the best drag car in Forza Horizon 6?", "There is no single best answer for every route. Split drag choices by class, short launch events, long runway pulls and speed-trap use."],
+      ["Should I use AWD for drag?", "AWD often helps beginners launch cleanly, but it can cost PI. Test AWD and RWD if the class limit is tight."],
+      ["What should I tune first?", "Fix grip and gearing first. Extra power is wasted if the car spins or hits the wrong gear before the finish."],
+      ["Can a drag car work for road racing?", "Usually not well. Keep separate drag and road tunes because gearing and grip priorities are different."]
+    ],
+    sources: ["https://forza.net/fh6cars", "https://forza.net/fh6playlists", "https://forums.forza.net/top"],
+    links: ["/best-cars/", "/tuning/", "/car-list/", "/cars/"]
   },
   {
     slug: "map",
@@ -335,13 +477,13 @@ const pages = [
   },
   {
     slug: "invalid-gaming-services-detected",
-    title: "Forza Horizon 6 Invalid Gaming Services Detected Fix",
-    description: "Fix Forza Horizon 6 invalid Gaming Services detected errors with Xbox app repair steps, Microsoft Store checks, Windows updates, overlays and reinstall options.",
-    keywords: "Forza Horizon 6 invalid gaming services detected, gaming service fix, Xbox app",
-    h1: "Forza Horizon 6 Invalid Gaming Services Detected",
+    title: "Forza Horizon 6 Gaming Services Fix — Xbox App Error",
+    description: "Fix Forza Horizon 6 Gaming Services errors, invalid Gaming Services detected, Xbox app launch loops, Store account issues, Steam sign-in and overlays.",
+    keywords: "gaming services Forza Horizon 6, invalid gaming services detected, Xbox app fix",
+    h1: "Forza Horizon 6 Gaming Services Fix",
     eyebrow: "Launch Fix Guide",
-    intro: "This page is built for players who can see Forza Horizon 6 in their library but cannot launch cleanly because Windows, Xbox app, Microsoft Store or Gaming Services is out of sync. Work through the quick checks first, then use the deeper repair steps only if the error keeps returning.",
-    facts: ["Gaming Services error", "Xbox app repair", "Microsoft Store sync", "Steam launch checks", "Overlay conflicts"],
+    intro: "This page is built for the rising search query gaming services Forza Horizon 6. Use it when the game shows invalid Gaming Services detected, the Xbox app loops, Microsoft Store ownership looks wrong, Steam sign-in fails, or the game closes before the menu.",
+    facts: ["Gaming Services Forza Horizon 6", "Invalid Gaming Services detected", "Xbox app repair", "Microsoft Store sync", "Steam launch checks", "Overlay conflicts"],
     fixTools: true,
     flowchart: {
       eyebrow: "Original Flowchart",
@@ -379,6 +521,17 @@ const pages = [
         ]
       },
       {
+        title: "Search Query Coverage",
+        headers: ["Query", "Best Answer on This Page", "Related Section"],
+        rows: [
+          ["gaming services forza horizon 6", "Repair Gaming Services, Xbox app and Microsoft Store state before reinstalling.", "#quick-fix"],
+          ["forza horizon 6 invalid gaming services detected", "Use the service repair flow, then test account and overlay conflicts.", "#flowchart"],
+          ["forza horizon 6 gaming service", "Check whether the issue is service registration, Store ownership or Xbox identity.", "#account-check"],
+          ["forza horizon 6 xbox app not launching", "Update Xbox app, Store apps, Gaming Services and Windows, then test clean launch.", "#quick-fix"],
+          ["forza horizon 6 steam sign in error", "Verify Steam files, then repair Xbox identity and Gaming Services dependencies.", "#steam-note"]
+        ]
+      },
+      {
         title: "Do Not Skip These Checks",
         headers: ["Check", "Good Sign", "Bad Sign"],
         rows: [
@@ -396,6 +549,7 @@ const pages = [
       { id: "when-to-reinstall", title: "When to Reinstall", body: "Reinstalling the full game should be late in the workflow. Try app repair, service repair, Windows updates and overlay testing first, because the issue often sits outside the game files." }
     ],
     faqs: [
+      ["How do I fix Gaming Services for Forza Horizon 6?", "Restart Windows, update Xbox app and Microsoft Store apps, run the Gaming Services Repair Tool if available, then repair or reset Xbox app and Gaming Services before reinstalling the game."],
       ["Is invalid Gaming Services detected a Forza-only bug?", "Not always. It usually points to Windows Gaming Services, Xbox app, Microsoft Store or account entitlement state, so fixing the service layer matters."],
       ["Should I reinstall Forza Horizon 6 first?", "No. Reinstalling is slow and may not fix a broken service package. Start with Xbox app and Gaming Services repair steps."],
       ["Does this affect Steam players?", "It can. Steam launches may still depend on Xbox identity or Microsoft services, especially around sign-in and entitlement checks."],

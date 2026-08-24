@@ -15,6 +15,8 @@ const siteSearch = document.querySelector("[data-site-search]");
 if (siteSearch) {
   const routes = [
     { terms: ["gaming services", "gaming service", "invalid", "launch error", "error", "xbox app", "fix"], href: "/invalid-gaming-services-detected/" },
+    { terms: ["treasure", "treasure car", "treasure cars", "clue", "reward"], href: "/treasure-cars/" },
+    { terms: ["drag", "drag car", "drag cars", "best drag", "fast launch"], href: "/best-drag-cars/" },
     { terms: ["smooth", "stutter", "fps", "lag", "low fps", "upscaling"], href: "/how-to-play-smoothly/" },
     { terms: ["pc", "settings", "graphics", "dlss", "fsr", "vram", "8gb"], href: "/pc-settings/" },
     { terms: ["car list", "cars", "vehicle", "vehicles"], href: "/car-list/" },
@@ -311,3 +313,4 @@ if (fixTool) {
 
   renderFixPath();
 }
+
